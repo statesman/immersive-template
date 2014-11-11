@@ -76,21 +76,21 @@
           <h3>Here's a subhed</h3>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
+          <hr />
+          <h3>Here's a subhed</h3>
+          <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person wholonger Book Review.</p>
           <div class="sider panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Related stories</h3>
             </div>
             <div class="panel-body">
               <ul class="fa-ul">
-                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 1</a></li>
-                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 2</a></li>
-                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 3</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 1</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 2</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 3</a></li>
             </div>
           </div>
-          <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
-          <hr />
-          <h3>Here's a subhed</h3>
-          <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person wholonger Book Review.</p>
           <p>Nick Denton gamification Arianna bloggers in their mother's basement Jeff Jarvis do what you do best and link to the rest Tumblr, a giant stack of newspapers that you'll never read TechCrunch content is king Julian Assange afternoon paper Tim Carmody, Quora circulation Sulzberger Arianna free as in beer.</p>
           <p><span>Nick Denton gamification Arianna bloggers</span> in their mother's basement Jeff Jarvis do what you do best and link to the rest Tumblr, a giant stack of newspapers that you'll never read TechCrunch content is king Julian Assange afternoon paper Tim Carmodysaid she said advertising.</p>
           <p><span>Free Darko layoffs the audience knows more</span> than I do copyright do what you do best and link to the rest learnings future newspaper metered model, nut graf privacy nut graf Snarkmarket Julian Assange cognitive surplus. hyperhyperlocal Snarkmarket Walter Lippmann RSS.</p>
@@ -101,15 +101,18 @@
           <hr />
           <h3>Here's a subhed</h3>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <div class="sider sider-md sider-left">
+            <iframe src="http://cf.datawrapper.de/lRNqN/2/" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="100%" height="350"></iframe>
+          </div>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <blockquote class="sider sider-md">
             <p><i class="fa fa-quote-left"></i>Frontline ProPublica the power of the press belongs eporting layoffs Jurgen Habermas CTR Robin Sloan<i class="fa fa-quote-right"></i></p>
             <footer class="text-right">Someone famous in <em>Source Title</em></footer>
           </blockquote>
-          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
-          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>

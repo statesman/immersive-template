@@ -1,7 +1,8 @@
 article {
   > p,
   > h3,
-  > blockquote {
+  > blockquote,
+  > iframe {
     margin-left: 10%;
     width: 60%;
   }
@@ -34,6 +35,18 @@ article {
     float: right;
     &.sider-md {
       width: 35%;
+    }
+    &.sider-left {
+      float: left;
+      margin-left: 5%;
+      margin-right: @line-height-computed;
+    }
+
+    iframe {
+      padding: 15px;
+      background: #fff;
+      border: 1px solid @gray-lighter;
+      .box-shadow(0 1px 1px rgba(0,0,0,.05));
     }
   }
 }
