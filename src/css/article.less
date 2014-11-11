@@ -1,0 +1,39 @@
+article {
+  > p,
+  > h3,
+  > blockquote {
+    margin-left: 10%;
+    width: 60%;
+  }
+
+  blockquote {
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+    padding-top: @line-height-computed / 2;
+    padding-bottom: @line-height-computed / 2;
+    i.fa {
+      color: #395271;
+      font-size: 13px;
+      top: -5px;
+      position: relative;
+      &.fa-quote-left {
+        margin-right: 8px;
+      }
+      &.fa-quote-right {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  > .sider {
+    margin-top: @line-height-computed;
+    margin-right: 10%;
+    margin-bottom: @line-height-computed;
+    margin-left: @line-height-computed;
+    width: 25%;
+    float: right;
+    &.sider-md {
+      width: 35%;
+    }
+  }
+}

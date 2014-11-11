@@ -53,26 +53,40 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
-            <img width="273" height="26" src="assets/logo.png" />
+            <img width="273" height="26" src="assets/logo-black.png" />
+            <p>Investigates</p>
           </a>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid hero">
-      <img class="img-responsive" style="margin-top:-130px;" src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
-    </div>
+    <div class="container-fluid hero" style="background-image:url('http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg');"></div>
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-1">
+        <section id="intro" class="col-xs-12 col-sm-6">
           <h6>Overline</h6>
           <h1>Headline about the story</h1>
           <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
           <p class="author">By byline / Published January 1, 2000</p>
           <p class="lead">metered model election-night hologram copyboy Frontline algorithms NPR Facebook Jurgen Habermas hashtag filters digital circulation strategy privacy Innovator's Dilemma, synergize Gannett right-sizing news.me cognitive surplus bringing a tote bag to a knife fight.</p>
           <p>filters community Google+ tools fair use Does my "yes, but" look big in this corner office? WikiLeaks incent the power of the press belongs to the person who owns one net neutrality, crowdfunding SEO Pulse Storify a giant stack of newspapers.</p>
+          <p><span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
+        </section>
+        <article>
+          <h3>Here's a subhed</h3>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <div class="sider panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Related stories</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="fa-ul">
+                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 1</a></li>
+                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 2</a></li>
+                <li><i class="fa-li fa fa-caret-right"></i><a href="#">Link 3</a></li>
+            </div>
+          </div>
           <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
           <hr />
           <h3>Here's a subhed</h3>
@@ -84,7 +98,22 @@
           <p>Free Darko layoffs the audience knows more than I do copyright do what you do best and link to the rest learnings future newspaper metered model, nut graf privacy nut graf Snarkmarket Julian Assange community dying Patch.</p>
           <p>Ushahidi Does my "yes, but" look big in this corner office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information</p>
           <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person longer Book Review.</p>
-        </div>
+          <hr />
+          <h3>Here's a subhed</h3>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <blockquote class="sider sider-md">
+            <p><i class="fa fa-quote-left"></i>Frontline ProPublica the power of the press belongs eporting layoffs Jurgen Habermas CTR Robin Sloan<i class="fa fa-quote-right"></i></p>
+            <footer class="text-right">Someone famous in <em>Source Title</em></footer>
+          </blockquote>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+        </article>
       </div>
     </div>
 
