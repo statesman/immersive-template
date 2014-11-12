@@ -74,7 +74,10 @@
       </div>
     </nav>
 
-    <div class="container-fluid hero" style="background-image:url('http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg');"></div>
+    <div class="container-fluid hero">
+      <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
+      <div class="overlay"></div>
+    </div>
     <div class="container">
       <div class="row">
         <section id="intro" class="col-xs-12 col-sm-6">
