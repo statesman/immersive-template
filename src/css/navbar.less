@@ -5,12 +5,15 @@
   border: none;
   .box-shadow(0 0 25px rgba(0,0,0,.05));
   border-bottom: 1px solid @gray-lighter;
-  .navbar-brand {
-    text-align: center;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: @gray-dark;
+  &.navbar-default {
+    z-index: @zindex-navbar;
+    .navbar-brand {
+      text-align: center;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: @gray-dark;
+    }
   }
   .navbar-nav.chapters {
     padding-left: 30px;
@@ -45,6 +48,18 @@
         font-weight: normal;
         background: white;
       }
+    }
+  }
+
+  &.navbar-thin {
+    background: white;
+    min-height: 35px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: @zindex-navbar - 10;
+    .navbar-brand {
+      height: 60px;
     }
   }
 }

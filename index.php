@@ -59,7 +59,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav chapters">
             <li class="active"><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
             <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
@@ -71,6 +71,24 @@
             <li><a href="#">Link</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-thin" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
+            <img width="273" height="26" src="assets/logo-black.png" />
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 

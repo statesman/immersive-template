@@ -4,11 +4,6 @@
 
   $(function() {
 
-    var heroIn = TweenMax.fromTo("#hero", 1.5,
-      {opacity: 0},
-      {opacity: 1}
-    );
-
     var introIn = TweenMax.fromTo("#intro", 2,
       {top: -75},
       {top: 0}
@@ -25,7 +20,6 @@
     var controller = new ScrollMagic();
 
     /* Page load animations */
-    heroIn.play();
     introIn.play();
 
     /* Animations for when a user scrolls past the hero */
