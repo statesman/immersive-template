@@ -39,6 +39,20 @@ article {
     }
   }
 
+  > .photo-block {
+    margin-bottom: @line-height-computed * 1.5;
+
+    img {
+      .img-responsive();
+    }
+    p.caption {
+      color: @gray;
+      font-family: @font-family-sans-serif;
+      font-size: 12px;
+      margin: 5px 0 0 0;
+    }
+  }
+
   > .sider {
     margin-top: 0;
     margin-right: 10%;
@@ -96,7 +110,8 @@ article {
 
   &#main {
     background: #fff;
-    margin-top: -200px;
+    position: relative;
+    top: -500px;
     padding-bottom: @line-height-computed * 2;
     margin-bottom: @line-height-computed;
     .box-shadow(0 0 25px rgba(0,0,0,.05));
