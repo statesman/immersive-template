@@ -1,10 +1,50 @@
+@navbar-separator-width: 8px;
+@navbar-separator-line-width: 1px;
+
 .navbar {
   border: none;
+  .box-shadow(0 0 25px rgba(0,0,0,.05));
+  border-bottom: 1px solid @gray-lighter;
   .navbar-brand {
     text-align: center;
     font-weight: 300;
     text-transform: uppercase;
     font-size: 12px;
-    color: #333;
+    color: @gray-dark;
+  }
+  .navbar-nav.chapters {
+    padding-left: 30px;
+    > li {
+      &:before,
+      &:after {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        border-bottom: @navbar-height / 2 solid transparent;
+        border-left: @navbar-separator-width solid transparent;
+        border-top: @navbar-height / 2 solid transparent;
+        content: '';
+        display: block;
+        z-index: 2;
+      }
+
+      &:before {
+        border-left-color: @gray-lighter;
+        z-index: 1;
+        margin-left: @navbar-separator-line-width;
+      }
+      &:after {
+        border-left-color: @navbar-default-bg;
+      }
+
+      > a,
+      &.active > a,
+      &.active:hover > a {
+        margin-left: @navbar-separator-width;
+        color: @gray-dark;
+        font-weight: normal;
+        background: white;
+      }
+    }
   }
 }
