@@ -110,19 +110,31 @@
         <article id="main">
           <div class="photo-full">
             <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00062-1920.jpg" />
+            <p class="caption">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
           </div>
           <h1>Headline about the story</h1>
           <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
           <p class="author">By byline / Published January 1, 2000</p>
-          <div class="sider panel panel-default">
+          <div class="sider panel panel-default sider-tweet">
             <div class="panel-heading">
-              <h3 class="panel-title">Related stories</h3>
+              <h3 class="panel-title"><i class="fa fa-twitter"></i> On Twitter</h3>
             </div>
             <div class="panel-body">
-              <ul class="fa-ul">
-                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 1</a></li>
-                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 2</a></li>
-                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 3</a></li>
+              <div class="media">
+                <a class="media-left media-top" href="#">
+                  <img src="https://pbs.twimg.com/profile_images/1097015353/Picture_277.png"/>
+                </a>
+                <div class="media-body">
+        					<p><strong>Ralph Haurwitz</strong></p>
+    					    <p><a href="https://twitter.com/intent/follow?screen_name=ralphhaurwitz" target="_blank">@ralphhaurwitz</a></p>
+                </div>
+      				</div>
+              <p class="tweet"><i class="fa fa-quote-left"></i>Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.<i class="fa fa-quote-right"></i></p>
+              <ul class="list-inline text-center">
+                <li><a href="https://twitter.com/intent/favorite?tweet_id=532618297662242816"><small><i class="fa fa-star"></i> Favorite</small></a></li>
+                <li><a href="https://twitter.com/intent/retweet?tweet_id=532618297662242816"><small><i class="fa fa-retweet"></i> Retweet</small></a></li>
+                <li><a href="https://twitter.com/intent/tweet?in_reply_to=532618297662242816"><small><i class="fa fa-reply"></i> Reply</small></a></li>
+      				</ul>
             </div>
           </div>
           <p class="lead">bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
@@ -132,6 +144,18 @@
           <h3>Here's a subhed</h3>
           <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person wholonger Book Review.</p>
           <p>Nick Denton gamification Arianna bloggers in their mother's basement Jeff Jarvis do what you do best and link to the rest Tumblr, a giant stack of newspapers that you'll never read TechCrunch content is king Julian Assange afternoon paper Tim Carmody, Quora circulation Sulzberger Arianna free as in beer.</p>
+          <div class="sider panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Related stories</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="fa-ul">
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 1</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 2</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Link 3</a></li>
+              </ul>
+            </div>
+          </div>
           <p><span>Nick Denton gamification Arianna bloggers</span> in their mother's basement Jeff Jarvis do what you do best and link to the rest Tumblr, a giant stack of newspapers that you'll never read TechCrunch content is king Julian Assange afternoon paper Tim Carmodysaid she said advertising.</p>
           <p><span>Free Darko layoffs the audience knows more</span> than I do copyright do what you do best and link to the rest learnings future newspaper metered model, nut graf privacy nut graf Snarkmarket Julian Assange cognitive surplus. hyperhyperlocal Snarkmarket Walter Lippmann RSS.</p>
           <p><span>Ushahidi Does my "yes, but" look big in this corner</span> office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information overload crowdfunding Storify attracting young readers.</p>
