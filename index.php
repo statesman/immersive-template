@@ -60,15 +60,13 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav chapters">
+          <div class="navbar-expand" data-target="#navbar-chapters">
+            <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
+          </div>
+          <ul id="navbar-chapters" class="nav navbar-nav hidden-xs">
             <li class="active"><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
             <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
             <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -83,7 +81,10 @@
         </div>
 
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+          <div class="navbar-expand" data-target="#secondary-navbar-chapters">
+            <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
+          </div>
+          <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-xs">
             <li class="active"><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>

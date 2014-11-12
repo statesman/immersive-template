@@ -46,10 +46,18 @@
       .setTween(storyIn)
       .addTo(controller);
 
+    // Open Twitter links in a new window
     $('.sider-twitter').on('click', 'a', function(e) {
       e.preventDefault();
       var url = $(this).attr('href');
       window.open(url, "_blank", "width=555, height=520");
+    });
+
+    // Show the chapters when their expanded on mobile
+    $('.navbar-expand').on('click', function(e) {
+      e.preventDefault();
+      var elId = $(this).data('target');
+      $(elId).toggleClass('hidden-xs');
     });
   });
 
