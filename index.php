@@ -89,6 +89,11 @@
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right social">
+            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
         </div>
       </div>
     </nav>
