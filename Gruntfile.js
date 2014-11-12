@@ -56,6 +56,8 @@ module.exports = function(grunt) {
         files: {
           'dist/scripts.js': [
             'bower_components/jquery/dist/jquery.js',
+            'bower_components/gsap/src/uncompressed/TweenMax.js',
+            'bower_components/ScrollMagic/js/jquery.scrollmagic.js',
             'src/js/main.js'
           ]
         }

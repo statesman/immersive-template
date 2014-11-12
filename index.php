@@ -74,7 +74,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid hero">
+    <div id="hero" class="container-fluid hero">
       <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
       <div class="overlay"></div>
     </div>
@@ -89,7 +89,7 @@
           <p>filters community Google+ tools fair use Does my "yes, but" look big in this corner office? WikiLeaks incent the power of the press belongs to the person who owns one net neutrality, crowdfunding SEO Pulse Storify a giant stack of newspapers.</p>
           <p><span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
         </section>
-        <article>
+        <article id="main">
           <h3>Here's a subhed</h3>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
@@ -143,7 +143,7 @@
     <p id="legal" class="center-block text-center"><small>© 2014 <a href="http://www.coxmediagroup.com" target="_blank">Cox Media Group</a>. By using this website, you accept the terms of our <a href="http://www.mystatesman.com/visitor_agreement/" target="_blank">Visitor Agreement</a> and <a target="_blank" href="http://www.mystatesman.com/privacy_policy/">Privacy Policy</a>, and understand your options regarding <a target="_blank" href="http://www.mystatesman.com/privacy_policy/#ad-choices">Ad Choices</a><img src="http://media.cmgdigital.com/shared/img/photos/2012/02/29/d3/da/ad_choices_logo.png" alt="AdChoices">.</small></p>
 
     <?php /* CMG advertising and analytics */ ?>
-    <?php include "includes/project-metrics.js"; ?>
+    <?php include "includes/project-metrics.inc"; ?>
     <?php include "../../common/metrics.js"; ?>
 
     <script src="dist/scripts.js"></script>
