@@ -115,7 +115,7 @@
           <h1>Headline about the story</h1>
           <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
           <p class="author">By byline / Published January 1, 2000</p>
-          <div class="sider panel panel-default sider-tweet">
+          <div class="sider panel panel-default sider-social sider-twitter">
             <div class="panel-heading">
               <h3 class="panel-title"><i class="fa fa-twitter"></i> On Twitter</h3>
             </div>
@@ -189,6 +189,26 @@
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <hr />
           <h3>Here's a subhed</h3>
+          <div class="sider panel panel-default sider-social">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-facebook-square"></i> On Facebook</h3>
+            </div>
+            <div class="panel-body">
+              <div class="media">
+                <a class="media-left media-top" href="#">
+                  <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/p48x48/1016320_10152241897839208_765057284_n.jpg?oh=b71da201658fa913d8b4f2565a740742&oe=55201378&__gda__=1424850128_0f95e0cf75fce1b453782a241786791c"/>
+                </a>
+                <div class="media-body">
+                  <p><strong>Austin American-Statesman</strong></p>
+                  <p><a href="https://facebook.com/statesman" target="_blank">facebook.com/statesman</a></p>
+                </div>
+              </div>
+              <p class="post"><i class="fa fa-quote-left"></i>Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.<i class="fa fa-quote-right"></i></p>
+              <ul class="list-inline text-center">
+                <li><a href="https://www.facebook.com/statesman/posts/10152898814129208" target="_blank"><small><i class="fa fa-comments"></i> Join the conversation</small></a></li>
+              </ul>
+            </div>
+          </div>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>

@@ -46,7 +46,7 @@
       .setTween(storyIn)
       .addTo(controller);
 
-    $('.sider-tweet').on('click', 'a', function(e) {
+    $('.sider-twitter').on('click', 'a', function(e) {
       e.preventDefault();
       var url = $(this).attr('href');
       window.open(url, "_blank", "width=555, height=520");
