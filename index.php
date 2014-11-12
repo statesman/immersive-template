@@ -189,6 +189,43 @@
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <hr />
           <h3>Here's a subhed</h3>
+
+          <div class="photo-block">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
+                </div>
+                <div class="item">
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00279-1920.jpg" />
+                </div>
+                <div class="item">
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <div class="sider panel panel-default sider-social">
             <div class="panel-heading">
               <h3 class="panel-title"><i class="fa fa-facebook-square"></i> On Facebook</h3>
@@ -209,8 +246,6 @@
               </ul>
             </div>
           </div>
-          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
-          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
