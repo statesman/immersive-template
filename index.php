@@ -102,14 +102,16 @@
           <h6>Overline</h6>
           <h1>Headline about the story</h1>
           <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
-          <p class="author">By byline / Published January 1, 2000</p>
           <p class="lead">metered model election-night hologram copyboy Frontline algorithms NPR Facebook Jurgen Habermas hashtag filters digital circulation strategy privacy Innovator's Dilemma, synergize Gannett right-sizing news.me cognitive surplus bringing a tote bag to a knife fight.</p>
           <p>filters community Google+ tools fair use Does my "yes, but" look big in this corner office? WikiLeaks incent the power of the press belongs to the person who owns one net neutrality, crowdfunding SEO Pulse Storify a giant stack of newspapers.</p>
           <p><span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
         </section>
+        <div id="hero-fadeout"></div>
         <article id="main">
-          <h3>Here's a subhed</h3>
-          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <h1>Headline about the story</h1>
+          <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
+          <p class="author">By byline / Published January 1, 2000</p>
+          <p class="lead">bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis. <span><a href="#">Do something link <i class="fa fa-angle-double-right"></i></a></span></p>
           <hr />
