@@ -13,19 +13,20 @@
 .hero {
   padding: 0;
   display: block;
-  height: 746px;
+  height: 650px;
   margin-bottom: -250px;
 
   z-index: @zindex-navbar - 5;
 
   position: relative;
   width: 100%;
+  overflow: hidden;
 
   img {
-    .size(100%, auto);
-    position: relative;
-    top: 0;
-    left: 0;
+    .size(auto, 100%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   .overlay {

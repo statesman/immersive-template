@@ -64,6 +64,7 @@ module.exports = function(grunt) {
             'bower_components/Slides/source/jquery.slides.js',
             'bower_components/gsap/src/uncompressed/TweenMax.js',
             'bower_components/ScrollMagic/js/jquery.scrollmagic.js',
+            'src/js/hero.js',
             'src/js/slider.js',
             'src/js/main.js'
           ]
