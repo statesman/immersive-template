@@ -76,7 +76,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
-            <img width="273" height="26" src="assets/logo-black.png" />
+            <img width="103" height="26" src="assets/logo-short-black.png" />
           </a>
         </div>
 
