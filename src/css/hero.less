@@ -7,18 +7,18 @@
   right: 0;
   bottom: 0;
   left: 0;
+  line-height: 0;
 }
 
 .hero {
   padding: 0;
   display: block;
   height: 746px;
-  margin-bottom: @line-height-computed;
+  margin-bottom: -400px;
 
   z-index: @zindex-navbar - 5;
 
   position: relative;
-  line-height: 0;
   width: 100%;
 
   img {
@@ -35,9 +35,23 @@
       .overlay();
     }
   }
-}
 
-#hero-fadeout {
-  position: relative;
-  top: -300px;
+  #intro {
+    color: white;
+    text-shadow: 2px 2px 20px rgba(0,0,0,.2);
+
+    z-index: @zindex-navbar - 3;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  // The <div> that triggers the hero's fadeout animation
+  #hero-fadeout {
+    position: absolute;
+    left: 0;
+    bottom: 40%;
+  }
 }
