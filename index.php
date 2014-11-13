@@ -63,7 +63,7 @@
           <div class="navbar-expand" data-target="#navbar-chapters">
             <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
           </div>
-          <ul id="navbar-chapters" class="nav navbar-nav hidden-xs">
+          <ul id="navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
             <li class="active"><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
             <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
             <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
@@ -84,7 +84,7 @@
           <div class="navbar-expand" data-target="#secondary-navbar-chapters">
             <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
           </div>
-          <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-xs">
+          <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
             <li class="active"><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>

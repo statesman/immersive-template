@@ -57,7 +57,7 @@
     $('.navbar-expand').on('click', function(e) {
       e.preventDefault();
       var elId = $(this).data('target');
-      $(elId).toggleClass('hidden-xs');
+      $(elId).toggleClass('hidden-navbar-collapsed');
     });
 
     // Setup a new slider

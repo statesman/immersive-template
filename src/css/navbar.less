@@ -7,12 +7,34 @@
   border-bottom: 1px solid @gray-lighter;
   &.navbar-default {
     z-index: @zindex-navbar;
-    .navbar-brand {
-      text-align: center;
-      font-weight: 300;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: @gray-dark;
+
+    .navbar-collapse {
+      border-top: none;
+    }
+
+    .navbar-header {
+      @media (max-width: @grid-float-breakpoint-max) {
+        margin-bottom: -10px;
+        margin-top: -10px;
+      }
+      .navbar-brand {
+        text-align: center;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: @gray-dark;
+        > img {
+          .center-block();
+          margin-bottom: 5px;
+        }
+        > p {
+          margin: 0;
+          line-height: 12px;
+        }
+        @media (max-width: @grid-float-breakpoint-max) {
+          float: none;
+        }
+      }
     }
   }
   #navbar-chapters.navbar-nav {
@@ -120,5 +142,21 @@
       font-size: 12px;
       text-transform: uppercase;
     }
+
+    // This is formatting for the expand button for times when the navbar is
+    // collapsed but the we're not at container-fluid yet
+    @media (min-width: @screen-sm-min) {
+      border: 1px solid @gray-lighter;
+      width: 175px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      .center-block();
+    }
+  }
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .hidden-navbar-collapsed {
+    display: none;
   }
 }
