@@ -59,10 +59,12 @@ module.exports = function(grunt) {
         files: {
           'dist/scripts.js': [
             'bower_components/jquery/dist/jquery.js',
-            'bower_components/bootstrap/js/carousel.js',
-            'bower_components/bootstrap/js/transition.js',
+            'bower_components/underscore/underscore.js',
+            'bower_components/imagesloaded/imagesloaded.pkgd.js',
+            'bower_components/Slides/source/jquery.slides.js',
             'bower_components/gsap/src/uncompressed/TweenMax.js',
             'bower_components/ScrollMagic/js/jquery.scrollmagic.js',
+            'src/js/slider.js',
             'src/js/main.js'
           ]
         }

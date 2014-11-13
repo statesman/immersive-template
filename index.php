@@ -203,36 +203,38 @@
           <h3>Here's a subhed</h3>
 
           <div class="photo-block">
-            <div id="carousel-example-generic" class="carousel slide">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-              </ol>
-
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
+            <div id="slider-1" class="slider">
+              <div class="slider-controls clearfix">
+                <p>Image <span class="slider-pos">1</span> of 5</p>
+                <ul class="list-inline pull-right">
+                  <li class="previous"><i class="fa fa-chevron-left"></i></li>
+                  <li class="next"><i class="fa fa-chevron-right"></i></li>
+                </ul>
+              </div>
+              <div id="slider-content" class="slider-content">
+                <span class="hidden slidesjs-next slidesjs-navigation">N</span>
+                <span class="hidden slidesjs-previous slidesjs-navigation">P</span>
+                <div>
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/gallery03.jpg">
+                  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
                 </div>
-                <div class="item">
-                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00279-1920.jpg" />
+                <div>
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/gallery02.jpg">
+                  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
                 </div>
-                <div class="item">
-                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00007-1920.jpg" />
+                <div>
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/gallery04.jpg">
+                  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
+                </div>
+                <div>
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/gallery05.jpg">
+                  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
+                </div>
+                <div>
+                  <img src="http://projects.statesman.com/news/va-center-of-excellence/images/gallery06.jpg">
+                  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
                 </div>
               </div>
-
-              <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="icon-prev" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="icon-next" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
             </div>
           </div>
 

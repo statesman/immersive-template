@@ -1,4 +1,4 @@
-(function($) {
+(function($, Slider) {
 
   "use strict";
 
@@ -53,12 +53,19 @@
       window.open(url, "_blank", "width=555, height=520");
     });
 
-    // Show the chapters when their expanded on mobile
+    // Show the chapters when they're expanded on mobile
     $('.navbar-expand').on('click', function(e) {
       e.preventDefault();
       var elId = $(this).data('target');
       $(elId).toggleClass('hidden-xs');
     });
+
+    // Setup a new slider
+    $('#slider-1 img').imagesLoaded()
+    .always(function() {
+      var slider = new Slider('#slider-1');
+    });
+
   });
 
-}(jQuery));
+}(jQuery, Slider));
