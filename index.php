@@ -178,11 +178,11 @@
           <p>Ushahidi Does my "yes, but" look big in this corner office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information</p>
           <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person longer Book Review.</p>
           <hr />
+          <h3>Here's a subhed</h3>
           <div class="photo-block">
             <img src="http://projects.statesman.com/news/va-center-of-excellence/images/jwj-VA-MRI-00279-1920.jpg" />
             <p class="caption">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
           </div>
-          <h3>Here's a subhed</h3>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <div class="sider sider-md sider-left">
             <iframe src="http://cf.datawrapper.de/lRNqN/2/" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="100%" height="350"></iframe>
