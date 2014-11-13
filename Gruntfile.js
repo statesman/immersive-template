@@ -27,12 +27,15 @@ module.exports = function(grunt) {
     less: {
       options: {
         sourceMap: true,
+        sourceMapFilename: 'dist/style.css.map',
+        sourceMapURL: 'style.css.map',
+        sourceMapRootpath: '../',
         paths: ['bower_components/bootstrap/less']
       },
       prod: {
         options: {
           compress: true,
-          cleancss: true
+          yuicompress: true
         },
         files: {
           "dist/style.css": "src/css/style.less"
