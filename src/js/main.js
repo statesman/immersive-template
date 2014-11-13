@@ -5,7 +5,7 @@
   $(function() {
 
     var introIn = TweenMax.fromTo("#intro", 2,
-      {top: '0%'},
+      {top: '5%'},
       {top: '15%'}
     );
 
