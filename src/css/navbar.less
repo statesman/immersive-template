@@ -89,18 +89,31 @@
     top: 0;
     width: 100%;
     z-index: @zindex-navbar - 10;
-    .navbar-brand {
-      height: 44px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+    .navbar-header {
+      float: left;
+      .navbar-brand {
+        height: 44px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
     }
-    .navbar-nav > li > a {
-      padding-top: 12px;
-      padding-bottom: 8px;
+    .navbar-nav {
+      > li > a {
+        padding-top: 12px;
+        padding-bottom: 8px;
 
-      color: @text-color;
-      font-family: @font-family-sans-serif;
-      font-weight: 400;
+        color: @text-color;
+        font-family: @font-family-sans-serif;
+        font-weight: 400;
+      }
+      &.navbar-right.social {
+        float: right;
+        margin-top: 0;
+        margin-bottom: 0;
+        > li {
+          float: left;
+        }
+      }
     }
 
     ul.social {
@@ -142,17 +155,26 @@
       font-size: 12px;
       text-transform: uppercase;
     }
-
-    // This is formatting for the expand button for times when the navbar is
-    // collapsed but the we're not at container-fluid yet
-    @media (min-width: @screen-sm-min) {
-      border: 1px solid @gray-lighter;
-      width: 175px;
-      margin-bottom: 8px;
-      border-radius: 4px;
-      .center-block();
-    }
   }
+}
+// This is formatting for the expand button for times when the navbar is
+// collapsed but the we're not at container-fluid yet
+@media (min-width: @screen-sm-min) {
+  .navbar-default .navbar-expand {
+    border: 1px solid @gray-lighter;
+    width: 175px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    .center-block();
+  }
+  .navbar-thin .navbar-expand {
+    margin-left: -150px;
+    margin-right: -150px;
+  }
+}
+.navbar-thin .navbar-expand {
+  margin-top: 44px;
+  margin-bottom: -2px;
 }
 
 @media (max-width: @grid-float-breakpoint-max) {
