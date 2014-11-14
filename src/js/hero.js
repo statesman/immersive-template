@@ -14,34 +14,43 @@
     // and update it every time the window is resized
     var sizeHero = function() {
       if ($(window).width() < breakpoint) {
-        return;
-      }
-
-      // Get the sizes of all the related els
-      var winHeight = $(window).height(),
-          navHeight = $('.navbar.navbar-default').outerHeight(),
-          heroHeight = winHeight - navHeight,
-          heroWidth = $(window).width(),
-          heroRatio = heroWidth / heroHeight;
-
-      // Set the hero height
-      hero.outerHeight(heroHeight);
-
-      // Set the image height/width so it fills the space
-      if(heroRatio >= heroImgRatio) {
-        heroImg.width('100%');
         heroImg.height('auto');
+        heroImg.width('100%');
+        hero.find('#intro').css({
+          'margin-top': '',
+          'top': ''
+        });
       }
       else {
-        heroImg.height('100%');
-        heroImg.width('auto');
-      }
+        // Get the sizes of all the related els
+        var winHeight = $(window).height(),
+            navHeight = $('.navbar.navbar-default').outerHeight(),
+            heroHeight = winHeight - navHeight,
+            heroWidth = $(window).width(),
+            heroRatio = heroWidth / heroHeight;
 
-      // Size the intro text's top margin to the negative of half its height
-      // so it's vertically centered
-      hero.find('#intro').css('margin-top', function() {
-          return '-' + ($(this).outerHeight() / 2).toString() + 'px';
-      });
+        // Set the hero height
+        hero.outerHeight(heroHeight);
+
+        // Set the image height/width so it fills the space
+        if(heroRatio >= heroImgRatio) {
+          heroImg.width('100%');
+          heroImg.height('auto');
+        }
+        else {
+          heroImg.height('100%');
+          heroImg.width('auto');
+        }
+
+        // Size the intro text's top margin to the negative of half its height
+        // so it's vertically centered
+        hero.find('#intro').css({
+          'margin-top': function() {
+            return '-' + ($(this).outerHeight() / 2).toString() + 'px';
+          },
+          'top': '50%'
+        });
+      }
     };
 
     sizeHero();
