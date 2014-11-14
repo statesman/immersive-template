@@ -1,5 +1,7 @@
 (function($, _) {
 
+  var breakpoint = 768;
+
   $(function() {
 
     // Grab the stuff we're going to be using often that won't change so we
@@ -11,6 +13,10 @@
     // Set the hero height so it fills all the available space in the viewport
     // and update it every time the window is resized
     var sizeHero = function() {
+      if ($(window).width() < breakpoint) {
+        return;
+      }
+
       // Get the sizes of all the related els
       var winHeight = $(window).height(),
           navHeight = $('.navbar.navbar-default').outerHeight(),
