@@ -89,7 +89,7 @@
         <div class="navbar-expand" data-target="#secondary-navbar-chapters">
           <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
         </div>
-        
+
         <div class="collapse navbar-collapse">
           <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
             <li class="active"><a href="#">Link</a></li>
@@ -176,6 +176,21 @@
           <p><span>Ushahidi Does my "yes, but" look big in this corner</span> office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information overload crowdfunding Storify attracting young readers.</p>
           <p>Free Darko layoffs the audience knows more than I do copyright do what you do best and link to the rest learnings future newspaper metered model, nut graf privacy nut graf Snarkmarket Julian Assange community dying Patch.</p>
           <p>Ushahidi Does my "yes, but" look big in this corner office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information</p>
+          <div id="call-time" class="sider sider-left panel panel-default">
+            <img class="img-responsive" src="assets/call-center.jpg" />
+            <div class="panel-body">
+              <div class="text">
+                <p>In 2013 DFPS received 600,957 calls to its intake center. About 1/4 of callers gave up after waiting, on average, almost six minutes for their calls to be answered.</p>
+                <button type="button" class="btn btn-primary btn-sm">Can you wait?</button>
+              </div>
+              <div class="counter">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width:0;"></div>
+                </div>
+                <p class="time"><i class="fa fa-clock-o"></i> <span>0:00</span></p>
+              </div>
+            </div>
+          </div>
           <p>Jurgen Habermas reporting layoffs Jurgen Habermas CTR Robin Sloan gotta grok it before you rock it Marshall McLuhan experiment copyboy Gutenberg collaboration Project Thunderdome the power of the press belongs to the person longer Book Review.</p>
           <p>Free Darko layoffs the audience knows more than I do copyright do what you do best and link to the rest learnings future newspaper metered model, nut graf privacy nut graf Snarkmarket Julian Assange community dying Patch.</p>
           <p>Ushahidi Does my "yes, but" look big in this corner office? experiment YouTube Zite experiment DocumentCloud every dog loves food, metered model Voice of San Diego information</p>

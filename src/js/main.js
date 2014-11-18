@@ -1,4 +1,4 @@
-(function($, Slider) {
+(function($, Slider, CallTime) {
 
   "use strict";
 
@@ -66,6 +66,8 @@
       var slider = new Slider('#slider-1');
     });
 
+    var calltime = new CallTime('#call-time');
+
   });
 
-}(jQuery, Slider));
+}(jQuery, Slider, CallTime));
