@@ -283,6 +283,33 @@
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
           <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
           <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
+          <div class="photo-block">
+            <div class="embed-responsive embed-responsive-16by9">
+              <!-- Start of Brightcove Player -->
+              <div style="display:none">JANUS-1086 chromeless player template</div>
+
+              <!--
+              By use of this code snippet, I agree to the Brightcove Publisher T and C
+              found at https://accounts.brightcove.com/en/terms-and-conditions/.
+              -->
+              <object id="myExperience3595824850001" class="BrightcoveExperience embed-responsive-item">
+                <param name="bgcolor" value="#FFFFFF" />
+                <param name="width" value="750" />
+                <param name="height" value="422" />
+                <param name="playerID" value="2305729465001" />
+                <param name="playerKey" value="AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A" />
+                <param name="isVid" value="true" />
+                <param name="isUI" value="true" />
+                <param name="dynamicStreaming" value="true" />
+                <param name="@videoPlayer" value="3595824850001" />
+              </object>
+              <!-- End of Brightcove Player -->
+            </div>
+            <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
+          </div>
+          <p>blog Frontline ProPublica the power of the press belongs to the person who owns one a giant stack of newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the public Mozilla Bill Keller Jeff Jarvis.</p>
+          <p>bloggers in their mother's basement information overload Article Skimmer the audience knows more than I do dingbat collaboration circulation David Cohn TBD, information wants to be free Nick Denton nonprofit bot dying WaPo scoop twitterati, newspaper What Would Google Do  vast wasteland.</p>
+          <p>natural-born blogger Clay Shirky paidContent Nick Denton engagement advertising awesome vast wasteland Nook Demand Media, Pulse iPad app shoot a video Gardening & War section cancel my subscription serendipity The Weekender synergize.</p>
         </article>
       </div>
     </div>
@@ -296,6 +323,7 @@
     <?php include "includes/project-metrics.inc"; ?>
     <?php include "../../common/metrics.js"; ?>
 
+    <script src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
     <script src="dist/scripts.js"></script>
     <?php if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'localhost'): ?>
       <script src="//localhost:35729/livereload.js"></script>
