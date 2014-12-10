@@ -1,3 +1,0 @@
-<IfModule mod_expires.c>
-    ExpiresDefault "access plus 5 minutes"
-</IfModule>

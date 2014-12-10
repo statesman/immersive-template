@@ -8,9 +8,10 @@ module.exports = function(grunt) {
 
     // Clean files from dist/ before build
     clean: {
-      css: ["dist/*.css", "dist/*.css.map"],
-      js: ["dist/*.js", "dist/*.js.map"],
-      fonts: ["fonts/**"]
+      css: ["public/dist/*.css", "public/dist/*.css.map"],
+      js: ["public/dist/*.js", "public/dist/*.js.map"],
+      fonts: ["public/fonts/**"],
+      pages: ["public/**.html"]
     },
 
     // Copy FontAwesome files to the fonts/ directory
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
         src: [
           'bower_components/font-awesome/fonts/**'
         ],
-        dest: 'fonts/',
+        dest: 'public/fonts/',
         flatten: true,
         expand: true
       }
@@ -29,7 +30,7 @@ module.exports = function(grunt) {
     less: {
       options: {
         sourceMap: true,
-        sourceMapFilename: 'dist/style.css.map',
+        sourceMapFilename: 'public/dist/style.css.map',
         sourceMapURL: 'style.css.map',
         sourceMapRootpath: '../',
         paths: ['bower_components/bootstrap/less']
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          "dist/style.css": "src/css/style.less"
+          "public/dist/style.css": "src/css/style.less"
         }
       }
     },
@@ -59,7 +60,7 @@ module.exports = function(grunt) {
       },
       homepage: {
         files: {
-          'dist/scripts.js': [
+          'public/dist/scripts.js': [
             'bower_components/jquery/dist/jquery.js',
             'bower_components/underscore/underscore.js',
             'bower_components/imagesloaded/imagesloaded.pkgd.js',
@@ -82,8 +83,9 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
       },
-      markup: {
-        files: ['index.php']
+      templates: {
+        files: ['pages/**/*', 'layouts/*'],
+        tasks: ['clean:pages', 'generator']
       },
       scripts: {
         files: ['src/js/**.js'],
@@ -95,13 +97,34 @@ module.exports = function(grunt) {
       }
     },
 
+    // A simple little development server
+    connect: {
+      server: {
+        options: {
+          hostname: 'localhost',
+          base: 'public',
+          keepalive: true,
+          livereload: true,
+          open: true
+        }
+      }
+    },
+
+    // A tool to run the webserver and livereloader simultaneously
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+      },
+      dev: ['connect', 'watch']
+    },
+
     // Bake out static HTML of our pages
     generator: {
       prod: {
         files: [{
           cwd: 'pages',
           src: ['**/*'],
-          dest: 'static'
+          dest: 'public'
         }],
         options: {
           partialsGlob: 'pages/partials/*.hbs',
@@ -122,8 +145,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-generator');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('bake', ['generator']);
-  grunt.registerTask('default', ['jshint', 'clean', 'less', 'copy', 'uglify', 'watch']);
+  grunt.registerTask('bake', ['clean:pages', 'generator']);
+  grunt.registerTask('default', ['jshint', 'clean', 'generator', 'less', 'copy', 'uglify', 'concurrent']);
 
 };
