@@ -60,10 +60,12 @@
       $(elId).toggleClass('hidden-navbar-collapsed');
     });
 
-    // Setup a new slider
-    $('#slider-1 img').imagesLoaded()
-    .always(function() {
-      var slider = new Slider('#slider-1');
+    // Setup sliders
+    $('.slider').each(function(i, el) {
+      $(el).imagesLoaded()
+        .always(function() {
+          new Slider(el);
+        });
     });
 
     var calltime = new CallTime('#call-time');
