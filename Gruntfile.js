@@ -1,3 +1,5 @@
+var helpers = require('./helpers');
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -104,7 +106,8 @@ module.exports = function(grunt) {
         options: {
           partialsGlob: 'pages/partials/*.hbs',
           templates: 'layouts',
-          templateExt: 'hbs'
+          templateExt: 'hbs',
+          helpers: helpers
         }
       }
     }

@@ -13,7 +13,7 @@
       {{#each images}}
         <div>
           <img src="{{url}}">
-          <p class="caption clearfix">{{#if caption}}{{caption}} {{/if}}{{#if credit}}<em class="pull-right">{{credit}}</em>{{/if}}</p>
+          {{{cutline caption credit}}}
         </div>
       {{/each}}
     </div>
