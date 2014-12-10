@@ -64,6 +64,7 @@ module.exports = function(grunt) {
             'bower_components/Slides/source/jquery.slides.js',
             'bower_components/gsap/src/uncompressed/TweenMax.js',
             'bower_components/ScrollMagic/js/jquery.scrollmagic.js',
+            'src/js/analytics.js',
             'src/js/call-time.js',
             'src/js/hero.js',
             'src/js/slider.js',
@@ -90,6 +91,22 @@ module.exports = function(grunt) {
         files: ['src/css/**.less', 'src/css/**/**.less'],
         tasks: ['clean:css', 'less']
       }
+    },
+
+    // Bake out static HTML of our pages
+    generator: {
+      prod: {
+        files: [{
+          cwd: 'pages',
+          src: ['**/*'],
+          dest: 'static'
+        }],
+        options: {
+          partialsGlob: 'pages/partials/*.hbs',
+          templates: 'layouts',
+          templateExt: 'hbs'
+        }
+      }
     }
 
   });
@@ -101,7 +118,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-generator');
 
+  grunt.registerTask('bake', ['generator']);
   grunt.registerTask('default', ['jshint', 'clean', 'less', 'copy', 'uglify', 'watch']);
 
 };
