@@ -131,15 +131,18 @@ module.exports = function(grunt) {
           helpers: require('./helpers'),
           nav: [
             {
-              name: "Story 1",
+              title: "Story 1",
+              subtitle: "Explaining story 1",
               file: "overview"
             },
             {
-              name: "Story 2",
+              title: "Story 2",
+              subtitle: "More on story 2",
               file: "page2"
             },
             {
-              name: "Story 3",
+              title: "Story 3",
+              subtitle: "And this is story 3",
               file: "page3"
             }
           ]

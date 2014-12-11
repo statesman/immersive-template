@@ -79,7 +79,7 @@ module.exports = {
   /*
    * Generate <li> nav links, intelligently adding the active class, URLs, etc.
    */
-  'navLinks': function() {
+  'navLinks': function(type) {
     var links = '';
 
     // Make sure nav is an array
@@ -90,8 +90,20 @@ module.exports = {
         // Make sure the page exists
         if(_.has(this.pages, el.file)) {
           // Make sure all required fields are present
-          if(_.has(el, 'name')) {
-            links += '<li' + (el.file === this.name ? ' class="active"' : '') + '><a href="' + el.file + '.html">' + el.name + '</a></li>';
+          if(_.has(el, 'title')) {
+
+            var linktext = '';
+            if(type === 'super') {
+              linktext = '<strong>' + el.title + '</strong><br />';
+              if(_.has(el, 'subtitle')) {
+                linktext += el.subtitle
+              }
+            }
+            else {
+              linktext = el.title;
+            }
+
+            links += '<li' + (el.file === this.name ? ' class="active"' : '') + '><a href="' + el.file + '.html">' + linktext + '</a></li>';
           }
           else {
             err('The navLinks helper requires name for each object in the nav array.');

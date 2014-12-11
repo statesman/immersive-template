@@ -26,28 +26,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
-          <img width="273" height="26" src="assets/logo-black.png" />
-          <p>Investigates</p>
-        </a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse">
-        <div class="navbar-expand" data-target="#navbar-chapters">
-          <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
-        </div>
-        <ul id="navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
-          <li class="active"><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
-          <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
-          <li><a href="#"><strong>Link</strong><br />Longer explainer</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>
-  </nav>
+  {{> navbar-super}}
 
   {{> navbar-thin}}
 
