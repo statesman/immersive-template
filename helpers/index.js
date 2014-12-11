@@ -1,6 +1,10 @@
 var Handlebars = require('handlebars'),
     _ = require('underscore');
 
+var err = function(e) {
+  console.error(e);
+};
+
 module.exports = {
   /*
    * Create a caption with credit
@@ -37,7 +41,7 @@ module.exports = {
    */
   'share': function(url, network) {
     if(_.isUndefined(url) || _.isUndefined(network)) {
-      console.error('url and network are required for the socialShareUrl helper');
+      err('url and network are required for the socialShareUrl helper');
       return null;
     }
 
@@ -63,13 +67,46 @@ module.exports = {
     };
 
     if(!_.has(networks, network)) {
-      console.error('Unrecognized social network in socialShareUrl helper:', network);
+      err('Unrecognized social network in socialShareUrl helper:', network);
       return null;
     }
 
     return new Handlebars.SafeString(
       '<a target="_blank" href="' + networks[network].url(url) + '">' + networks[network].icon + '</a>'
     );
+  },
+
+  /*
+   * Generate <li> nav links, intelligently adding the active class, URLs, etc.
+   */
+  'navLinks': function() {
+    var links = '';
+
+    // Make sure nav is an array
+    if(_.isArray(this.options.nav)) {
+      // Loop through all of the nav objects ...
+      var navs = this.options.nav;
+      _.each(navs, function(el) {
+        // Make sure the page exists
+        if(_.has(this.pages, el.file)) {
+          // Make sure all required fields are present
+          if(_.has(el, 'name')) {
+            links += '<li' + (el.file === this.name ? ' class="active"' : '') + '><a href="' + el.file + '.html">' + el.name + '</a></li>';
+          }
+          else {
+            err('The navLinks helper requires name for each object in the nav array.');
+          }
+        }
+        else {
+          err('The navLinks helper can\'t find a matching page for ' + nav);
+        }
+      }, this);
+    }
+    else {
+      err('generator.TASK.options.nav in the Gruntfile must be an array to use the navLinks helper.');
+    }
+
+    return new Handlebars.SafeString(links);
   }
 
 };

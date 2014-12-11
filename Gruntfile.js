@@ -1,5 +1,3 @@
-var helpers = require('./helpers');
-
 module.exports = function(grunt) {
   'use strict';
 
@@ -84,7 +82,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       templates: {
-        files: ['pages/**/*', 'layouts/*'],
+        files: ['pages/**/*', 'layouts/*', 'helpers/**'],
         tasks: ['clean:pages', 'generator']
       },
       scripts: {
@@ -130,7 +128,21 @@ module.exports = function(grunt) {
           partialsGlob: 'pages/partials/*.hbs',
           templates: 'layouts',
           templateExt: 'hbs',
-          helpers: helpers
+          helpers: require('./helpers'),
+          nav: [
+            {
+              name: "Story 1",
+              file: "overview"
+            },
+            {
+              name: "Story 2",
+              file: "page2"
+            },
+            {
+              name: "Story 3",
+              file: "page3"
+            }
+          ]
         }
       }
     }

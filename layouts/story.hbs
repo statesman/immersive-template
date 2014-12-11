@@ -10,7 +10,7 @@
 
   {{> meta}}
 
-  <link href="../dist/style.css" rel="stylesheet">
+  <link href="dist/style.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700italic,700,800,800italic' rel='stylesheet' type='text/css'>
@@ -49,34 +49,7 @@
     </div>
   </nav>
 
-  <nav class="navbar navbar-thin" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
-          <img width="103" height="26" src="assets/logo-short-black.png" />
-        </a>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right social">
-        <li>{{{share page.url 'facebook'}}}</li>
-        <li>{{{share page.url 'twitter'}}}</li>
-        <li>{{{share page.url 'gplus'}}}</li>
-      </ul>
-
-      <div class="navbar-expand" data-target="#secondary-navbar-chapters">
-        <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
-      </div>
-
-      <div class="collapse navbar-collapse">
-        <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </nav>
+  {{> navbar-thin}}
 
   {{{body}}}
 
@@ -87,7 +60,7 @@
 {{> cmg-footer-scripts}}
 
 <script src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-<script src="../dist/scripts.js"></script>
+<script src="dist/scripts.js"></script>
 
 </body>
 </html>
