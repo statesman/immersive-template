@@ -1,0 +1,333 @@
+# immersive-template
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+This project is our go-to tool for generating multipage, off-platform immersive story presentations.
+
+A few key features:
+- a Grunt and Handlebars-driven generator that bakes out flat HTML files
+- a Connect server for development with livereload
+- ready-to-tweak base styles and scripts, compiled with Grunt
+- partials for often-used elements (photo blocks of various sizes, Brightcove videos, etc.)
+- helpers for common tasks (nav and URL generation)
+- sample Apache configs for serving it off of the existing Cox infrastructure
+
+## Requirements
+
+- Node.js
+- Grunt
+- Bower
+
+## Setup
+
+Download and unpack this repo:
+```
+$ curl -OL https://github.com/statesman/immersive-template/archive/master.zip
+$ unzip master.zip -d YOUR_PROJECT_NAME
+$ cd YOUR_PROJECT_NAME
+```
+Install dependencies:
+```
+$ npm install
+$ bower install
+```
+
+## Usage
+
+### Project structure
+
+First things first, you should probably understand where everything lives and what all of these folders are for:
+
+`helpers/`: contains Handlebars helpers, which are structured as Node.js modules (in the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) format).
+
+`layouts/`: these are Handlebars templates that are used to wrap the content you create in the `pages/` folder
+
+`pages/`: this is your content and everything that's in this folder will be automatically parsed by grunt and made available to users in the `public/` folder
+
+`partials/`: these are little snippets, in the Handlebars partials format, that can be used to generate slideshows, inline photos, etc.
+
+`public/`: in production, this is the folder that actually serves the project (or it can be the only piece of the project you actually move to production)
+
+`src/css/`: `less` files that Grunt will transpile into CSS in `public/dist/style.css`
+
+`src/js/`: JavaScript files that Grunt will concatenate, Uglify and save in `public/dist/scripts.js`
+
+`src/assets/`: This is where images, logos, etc. live. It's the only save place in `dist/` to put things because most everything else in that folder is auto-cleaned by Grunt.
+
+### Adding content
+
+We'll walk though the `pages/index.html` file to (try to) explain how to use this template.
+
+Run `grunt` if you haven't already, which will start the local dev server and open project's home page in your default Web browser.
+
+This tool uses [`grunt-generator`](https://github.com/clavery/grunt-generator) to bake out flat files based on the contents of the `pages/` directory. Each `.html` file in `pages/` is passed through the appropriate Handlebars template in `layouts/`, which, in the case of the [default `story.hbs` template](layouts/story.hbs), wraps it with a nav, Facebook and Twitter meta tags, advertising and drops in scripts and styles.
+
+Because `index.html` is passed through `grunt-generator`, it's treated as a Handlebars template, which means any of the included partials and helpers can be used. Those are documented below.
+
+Each `.html` file in the `pages/` directory also has "frontmatter", which is in JSON format. The following settings are **required** for each page:
+
+```json
+{
+  "template" : "story", // sets the template from layouts/ to be used
+  "title": "Starter template", // will be used as the page title, social share title and etc.
+  "description": "This is a starter template", // used as the meta description and social share description
+  "thumbnail": "assets/thumbnail.jpg" // a thumbnail for social
+}
+```
+
+The frontmatter can also be used to create objects that can be passed to the Handlebars helpers. For example, in `index.html` a photo is defined in the frontmatter:
+
+```json
+"photo1": {
+  "url": "assets/photo.jpg",
+  "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.", // optional
+  "credit": "Photographer / Statesman" // optional
+}
+```
+
+then passed to a Handlebars helper farther down the page to be rendered out as a photo block by `grunt-generator`:
+
+```html
+{{> photo-block page.photo1}}
+```
+
+Note that in the JSON the context was given a key of `photo1`, then it passed to the partial as `page.photo1`.
+
+Add more pages by adding additional `.html` files, with the required frontmatter, to the `pages/` directory. Every time you add a page Grunt will automatically build it into a new page in the `public/` folder and refresh your browser.
+
+### Configuring the nav
+
+### Changing styles
+
+### Using JavaScript
+
+- adding with Bower
+- writing modules
+- informing Grunt
+
+### Using Bootstrap
+
+- adding modules
+- using JavaScript
+
+### Deploying
+
+- setting `base`
+- using Apache
+
+## Reference
+
+### Included partials
+
+*Partials can be included using the regular Handlebars convention: `{{> partial-name}}`. They can be passed an optional context, but assume the calling context if none is provided.*
+
+*Any `.hbs` file saved to `partials/` will automatically be made available. The data required data documented below should unless noted be stored in a JavaScript object in the frontmatter and passed.*
+
+---
+
+#### `{{> banner-ad}}`
+
+Markup for a 728px x 90px banner ad on large screens and a 320px x 50px on small screens. Includes Bootstrap classes to show/hide the banners.
+
+---
+
+#### `{{> blockquote context}}`
+
+Markup for a Bootstrap `<blockquote>`
+
+*Example context:*
+
+```json
+{
+  "text": "Text of the long pull quote would go here.",
+  "attribution": "Person of Organization"
+}
+```
+
+---
+
+#### `{{> cmg-footer-scripts}}`
+
+Analytics code for SiteCatalyst, Quantcast and Chartbeat.
+
+---
+
+#### `{{> cmg-footer-scripts}}`
+
+Analytics code for SiteCatalyst, Quantcast and Chartbeat.
+
+---
+
+#### `{{> cmg-header-scripts}}`
+
+Google Ads code and analytics code for Quantacast and Chartbeat.
+
+---
+
+#### `{{> facebook context}}`
+
+A Facebook post panel that includes the original post and a permalink to the original post.
+
+*Example context:*
+
+```json
+{
+  "name": "Austin American-Statesman",
+  "screen_name": "statesman",
+  "text": "Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.",
+  "id": "10152898814129208",
+  "image": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/p48x48/1016320_10152241897839208_765057284_n.jpg?oh=b71da201658fa913d8b4f2565a740742&oe=55201378&__gda__=1424850128_0f95e0cf75fce1b453782a241786791c"
+}
+```
+
+---
+
+#### `{{> linklist context}}`
+
+A link list, rendered as an unordered list in a Bootstrap panel with FontAwesome list icons.
+
+*Example context:*
+
+```json
+{
+  "title": "Related stories",
+  "links": [{
+    "name": "Link 1",
+    "url": "#"
+  }, {
+    "name": "Link 2",
+    "url": "#"
+  }, {
+    "name": "Link 3",
+    "url": "#"
+  }]
+}
+```
+
+---
+
+#### `{{> meta}}`
+
+Generates OpenGraph tags for Facebook, Twitter card tags for Twitter and canonical and description `<meta>` tags.
+
+All needed data are pulled from the global context and compile time.
+
+---
+
+#### `{{> navbar-super}}`
+
+A Bootstrap nav that's thicker, has descriptions for each link and by default disappears as the user scrolls.
+
+*For more information on adding links to the nav, see **Configuring the nav**.*
+
+---
+
+#### `{{> navbar-thin}}`
+
+A thin Bootstrap nav that's persistent (fixed to the top of the window) and includes share icons.
+
+*For more information on adding links to the nav, see **Configuring the nav**.*
+
+---
+
+#### `{{> photo-block context}}`, `{{> photo-full context}}`
+
+Pre-built photo panels that can be dropped into stories. You'll need to see that the photo is properly sized and stored in the `public/assets/` directory.
+
+*Example context:*
+
+```json
+{
+  "url": "assets/photo.jpg",
+  "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.", // optional
+  "credit": "Photographer / Statesman" // optional
+}
+```
+
+---
+
+#### `{{> scripts}}`
+
+Our scripts, along with the concatenated and Uglify-ed Bower scripts.
+
+---
+
+#### `{{> slider}}`
+
+A responsive slider that listens for touch events and has a display area for captions. This generates that markup required for the custom slider module in `src/js/slider.js`. It wraps it in a slider case, which `src/js/main.js` uses to initialize the slider.
+
+*Example context:*
+
+```json
+{
+  "images": [{
+    "url": "assets/photo1.jpg",
+    "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.",
+    "credit": "Photographer / Statesman"
+  }, {
+    "url": "assets/photo2.jpg",
+    "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.",
+    "credit": "Photographer / Statesman"
+  }, {
+    "url": "assets/photo3.jpg",
+    "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.",
+    "credit": "Photographer / Statesman"
+  }]
+}
+```
+
+---
+
+#### `{{> styles}}`
+
+Project styles, compiled by Grunt.
+
+---
+
+#### `{{> tweet context}}`
+
+An embedded Twitter status, with links that point to Twitter's [Web intents](https://dev.twitter.com/web/intents) URLs for replying, retweeting and favoriting.
+
+*Example context:*
+
+```json
+{
+  "name": "Ralph Haurwitz",
+  "screen_name": "ralphhaurwitz",
+  "image": "https://pbs.twimg.com/profile_images/1097015353/Picture_277.png",
+  "text": "Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.",
+  "id": "532618297662242816"
+}
+```
+
+---
+
+#### `{{> video-block-brightcove context}}`
+
+A responsive, chromeless Brightcove video player. It's made responsive using Bootstrap's [responsive embed](http://getbootstrap.com/components/#responsive-embed).
+
+*Example conext:*
+
+```json
+{
+  "playerID": "2305729465001",
+  "playerKey": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
+  "videoPlayer": "3595824850001"
+}
+```
+
+### Included helpers
+
+*Helpers can be used using the regular Handlebars convention: `{{helper context}}` for regular helpers and `{{#helper}}{{/helper}}` for block helpers. They can be passed an optional context, but have access to the global context if none is provided.*
+
+*Any `.js` file saved to `helpers/` will automatically be made available. Helpers should be written in CommonJS format; they'll be automatically be registered by their filename. The data required data documented below should unless noted be stored in a JavaScript object in the frontmatter and passed.*
+
+#### {{cutline context}}
+
+#### {{#markdown}}Some markdown{{/markdown}}
+
+#### {{navLinks}}, {{subNavLinks}}
+
+#### {{projectUrl filename}}
+
+#### {{share network}}

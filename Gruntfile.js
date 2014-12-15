@@ -121,7 +121,7 @@ module.exports = function(grunt) {
           dest: 'public'
         }],
         options: {
-          partialsGlob: 'pages/partials/*.hbs',
+          partialsGlob: 'partials/*.hbs',
           templates: 'layouts',
           templateExt: 'hbs',
           helpers: require('./helpers'),
