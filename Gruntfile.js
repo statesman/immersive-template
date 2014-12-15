@@ -133,7 +133,24 @@ module.exports = function(grunt) {
             {
               title: "Story 1",
               subtitle: "Explaining story 1",
-              file: "overview"
+              file: "overview",
+              children: [
+                {
+                  title: "Sub-story 1",
+                  subtitle: "Explaining story 1",
+                  file: "page2"
+                },
+                {
+                  title: "Sub-story 2",
+                  subtitle: "More on story 2",
+                  file: "page2"
+                },
+                {
+                  title: "Sub-story 3",
+                  subtitle: "And this is story 3",
+                  file: "page3"
+                }
+              ]
             },
             {
               title: "Story 2",
@@ -143,7 +160,13 @@ module.exports = function(grunt) {
             {
               title: "Story 3",
               subtitle: "And this is story 3",
-              file: "page3"
+              file: "page3",
+              children: [
+                {
+                  title: "Sub-story 4",
+                  file: "page4"
+                }
+              ]
             }
           ]
         }
