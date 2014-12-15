@@ -6,6 +6,10 @@
 node_modules/
 
 
+### Environment config ###
+.htaccess
+
+
 ### Bower ###
 bower_components
 

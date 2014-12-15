@@ -133,7 +133,7 @@ module.exports = function(grunt) {
             {
               title: "Story 1",
               subtitle: "Explaining story 1",
-              file: "overview",
+              file: "index",
               children: [
                 {
                   title: "Sub-story 1",

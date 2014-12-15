@@ -20,7 +20,7 @@ module.exports = function(type) {
 
     // Make sure the page exists
     if(!_.has(this.pages, el.file)) {
-      console.error('The navLinks helper can\'t find a matching page for ' + nav);
+      console.error('The navLinks helper can\'t find a matching page for ' + el.file);
       return;
     }
 
