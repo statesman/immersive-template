@@ -9,14 +9,16 @@ var Handlebars = require('handlebars'),
  * @url: optional string
  */
 module.exports = function(network) {
+  var err = this.options.grunt.log.error || console.error;
+
   if(_.isUndefined(network)) {
-    console.error('network is required for the socialShareUrl helper');
+    err('network is required for the socialShareUrl helper');
     return;
   }
 
   // Make sure baseUrl is set so we can actually calculate the URL
   if(!_.has(this.options, 'base')) {
-    console.error('The share helper requires grunt.generator.TASK.options.base to be set');
+    err('The share helper requires grunt.generator.TASK.options.base to be set');
     return;
   }
 
@@ -48,7 +50,7 @@ module.exports = function(network) {
   };
 
   if(!_.has(networks, network)) {
-    console.error('Unrecognized social network in socialShareUrl helper:', network);
+    err('Unrecognized social network in socialShareUrl helper: %s', network);
     return null;
   }
 

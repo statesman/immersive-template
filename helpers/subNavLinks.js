@@ -7,9 +7,11 @@ var Handlebars = require('handlebars'),
  * @type: optional string
  */
 module.exports = function(type) {
+  var err = this.options.grunt.log.error || console.error;
+
   // Make sure nav is an array
   if(!_.isArray(this.options.nav)) {
-    console.error('generator.TASK.options.nav in the Gruntfile must be an array to use the subNavLinks helper.');
+    err('generator.TASK.options.nav in the Gruntfile must be an array to use the subNavLinks helper.');
     return null;
   }
 
@@ -51,13 +53,13 @@ module.exports = function(type) {
     _.each(activeSubnav, function(child) {
       // Make sure the page exists
       if(!_.has(this.pages, child.file)) {
-        console.error('The subNavLinks helper can\'t find a matching page for ' + child.file);
+        err('The subNavLinks helper can\'t find a matching page for %s', child.file);
         return;
       }
 
       // Make sure all required fields are present
       if(!_.has(child, 'title')) {
-        console.error('The subNavLinks helper requires title for each object in the children array.');
+        err('The subNavLinks helper requires title for each object in the children array.');
         return
       }
 

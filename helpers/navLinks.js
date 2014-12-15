@@ -7,9 +7,11 @@ var Handlebars = require('handlebars'),
  * @type: optional string
  */
 module.exports = function(type) {
+  var err = this.options.grunt.log.error || console.error;
+
   // Make sure nav is an array
   if(!_.isArray(this.options.nav)) {
-    console.error('generator.TASK.options.nav in the Gruntfile must be an array to use the navLinks helper.');
+    err('generator.TASK.options.nav in the Gruntfile must be an array to use the navLinks helper.');
     return null;
   }
 
@@ -20,13 +22,13 @@ module.exports = function(type) {
 
     // Make sure the page exists
     if(!_.has(this.pages, el.file)) {
-      console.error('The navLinks helper can\'t find a matching page for ' + el.file);
+      err('The navLinks helper can\'t find a matching page for ' + el.file);
       return;
     }
 
     // Make sure all required fields are present
     if(!_.has(el, 'title')) {
-      console.error('The navLinks helper requires name for each object in the nav array.');
+      err('The navLinks helper requires name for each object in the nav array.');
       return
     }
 

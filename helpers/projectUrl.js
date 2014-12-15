@@ -7,9 +7,11 @@ var _ = require('underscore');
  * @filename: optional string
  */
 module.exports = function(filename) {
+  var err = this.options.grunt.log.error || console.error;
+
   // Make sure baseUrl is set so we can actually calculate the URL
   if(!_.has(this.options, 'base')) {
-    console.error('The url helper requires grunt.generator.TASK.options.base to be set');
+    err('The url helper requires grunt.generator.TASK.options.base to be set');
     return;
   }
 
