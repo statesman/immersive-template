@@ -129,6 +129,7 @@ module.exports = function(grunt) {
           templates: 'layouts',
           templateExt: 'hbs',
           helpers: require('./helpers'),
+          base: 'http://projects.statesman.com/templates/immersive/',
           nav: [
             {
               title: "Story 1",

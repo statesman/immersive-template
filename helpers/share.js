@@ -3,32 +3,44 @@ var Handlebars = require('handlebars'),
 
 /*
  * Generate a link to a social network's share window, with the corresponding
- * FontAwesome icon
+ * FontAwesome icon. If no URL is passed, the current page is used.
  *
- * @url: string
  * @network: string
+ * @url: optional string
  */
-module.exports = function(url, network) {
-  if(_.isUndefined(url) || _.isUndefined(network)) {
-    console.error('url and network are required for the socialShareUrl helper');
-    return null;
+module.exports = function(network) {
+  if(_.isUndefined(network)) {
+    console.error('network is required for the socialShareUrl helper');
+    return;
+  }
+
+  // Make sure baseUrl is set so we can actually calculate the URL
+  if(!_.has(this.options, 'base')) {
+    console.error('The share helper requires grunt.generator.TASK.options.base to be set');
+    return;
+  }
+
+  // Generate a URL to the current page
+  var url = this.options.base;
+  if(this.name !== 'index') {
+    url += this.name + '.html';
   }
 
   var networks = {
     facebook: {
-      url: function(url) {
+      url: function() {
         return 'https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url);
       },
       icon: '<i class="fa fa-facebook-square"></i>'
     },
     twitter: {
-      url: function(url) {
+      url: function() {
         return 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&related=@statesman';
       },
       icon: '<i class="fa fa-twitter"></i>'
     },
     gplus: {
-      url: function(url) {
+      url: function() {
         return 'https://plus.google.com/share?url=' + encodeURIComponent(url);
       },
       icon: '<i class="fa fa-google-plus"></i>'
@@ -41,6 +53,6 @@ module.exports = function(url, network) {
   }
 
   return new Handlebars.SafeString(
-    '<a target="_blank" href="' + networks[network].url(url) + '">' + networks[network].icon + '</a>'
+    '<a target="_blank" href="' + networks[network].url() + '">' + networks[network].icon + '</a>'
   );
 };
