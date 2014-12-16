@@ -63,7 +63,6 @@ module.exports = function(grunt) {
             'bower_components/underscore/underscore.js',
             'bower_components/imagesloaded/imagesloaded.pkgd.js',
             'bower_components/Slides/source/jquery.slides.js',
-            'src/js/call-time.js',
             'src/js/slider.js',
             'src/js/main.js'
           ]
