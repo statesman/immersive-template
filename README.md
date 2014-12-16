@@ -7,7 +7,7 @@ This project is our go-to tool for generating multipage, off-platform immersive 
 A few key features:
 - a Grunt and Handlebars-driven generator that bakes out flat HTML files
 - a Connect server for development with livereload
-- ready-to-tweak base styles and scripts, compiled with Grunt
+- ready-to-tweak Bootstrap styles and scripts, compiled with Grunt
 - partials for often-used elements (photo blocks of various sizes, Brightcove videos, etc.)
 - helpers for common tasks (nav and URL generation)
 - sample Apache configs for serving it off of the existing Cox infrastructure
@@ -66,7 +66,7 @@ Because `index.html` is passed through `grunt-generator`, it's treated as a Hand
 
 Each `.html` file in the `pages/` directory also has "frontmatter", which is in JSON format. The following settings are **required** for each page:
 
-```json
+```js
 {
   "template" : "story", // sets the template from layouts/ to be used
   "title": "Starter template", // will be used as the page title, social share title and etc.
@@ -77,7 +77,7 @@ Each `.html` file in the `pages/` directory also has "frontmatter", which is in 
 
 The frontmatter can also be used to create objects that can be passed to the Handlebars helpers. For example, in `index.html` a photo is defined in the frontmatter:
 
-```json
+```js
 "photo1": {
   "url": "assets/photo.jpg",
   "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.", // optional
@@ -91,29 +91,88 @@ then passed to a Handlebars helper farther down the page to be rendered out as a
 {{> photo-block page.photo1}}
 ```
 
-Note that in the JSON the context was given a key of `photo1`, then it passed to the partial as `page.photo1`.
+Note that in the JSON the context was given a key of `photo1`, then it was passed to the partial as `page.photo1`.
 
 Add more pages by adding additional `.html` files, with the required frontmatter, to the `pages/` directory. Every time you add a page Grunt will automatically build it into a new page in the `public/` folder and refresh your browser.
 
 ### Configuring the nav
 
+If you're using the included nav partials (`{{> navbar-thin}}` or `{{> navbar-super}}`) or helpers (`{{navLinks}}` or `{{subNavLinks}}`) you need to configure the nav links they generate by passing them some info in the Gruntfile.
+
+When the nav is compiled, it'll automatically add an active class for the current page and validate each of the links. Watch the Grunt output for any warnings.
+
+Here's an example configuration:
+
+```js
+nav: [
+  {
+    title: "Story 1", // This will be used as the link text
+    subtitle: "Explaining story 1", // Optional, used in the super nav
+    file: "index", // Should correspond to the file name in pubilc/, without the .html
+    children: [ // These are structured the same way as their parent elements, just nested in the children array
+      {
+        title: "Sub-story 2",
+        subtitle: "More on story 2",
+        file: "page2"
+      },
+      {
+        title: "Sub-story 3",
+        subtitle: "And this is story 3",
+        file: "page3"
+      }
+    ]
+  },
+  {
+    title: "Story 2",
+    subtitle: "More on story 2",
+    file: "page2"
+  }
+]
+```
+
 ### Changing styles
+
+The project is structured so that only the Bootstrap styles you want are compiled into the final `public/dist/style.css` file. To add and remove Bootstrap Less modules, comment/uncomment the corresponding lines in `src/css/custom-bootstrap/bootstrap.less`. To override Bootstrap variables, edit `src/css/custom-bootstrap/variables.less`.
+
+Custom Less modules can be written and stored in `src/css/` then imported into `src/css/style.less` and will have access to all of Bootstrap's mixins and variables.
+
+See Bootstrap's [Using Less](http://getbootstrap.com/css/#less) for more.
 
 ### Using JavaScript
 
-- adding with Bower
-- writing modules
-- informing Grunt
+New libraries can be added using Bower. For example, to add tabletop:
 
-### Using Bootstrap
+```
+$ bower add tabletop --save
+```
 
-- adding modules
-- using JavaScript
+Then, add the project's `.js` files to `Grunt.uglify.prod.files`, as we've already done for jQuery and a few other libraries:
+
+```
+'public/dist/scripts.js': [
+  'bower_components/jquery/dist/jquery.js',
+  'bower_components/underscore/underscore.js',
+  'bower_components/imagesloaded/imagesloaded.pkgd.js',
+  'bower_components/Slides/source/jquery.slides.js',
+  'src/js/call-time.js',
+  'src/js/slider.js',
+  'src/js/main.js'
+]
+```
+
+The same applies if you'd like to add any of Bootstrap's JavaScript modules, which **aren't included by default**.
+
+You can also write your own JavaScript modules and save them in `src/js/` and add them to the same Grunt array to have them packaged with the final build.
+
+Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/). If you get a JShint warning that's unclear, you can look it up at [jslinterrors.com](https://jslinterrors.com/).
 
 ### Deploying
 
-- setting `base`
-- using Apache
+There are two ways you can deploy a project created with this template:
+
+1) `git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
+
+2) Copy the contents of the `public/` directory to your deploy location.
 
 ## Reference
 
@@ -137,7 +196,7 @@ Markup for a Bootstrap `<blockquote>`
 
 *Example context:*
 
-```json
+```js
 {
   "text": "Text of the long pull quote would go here.",
   "attribution": "Person of Organization"
@@ -170,7 +229,7 @@ A Facebook post panel that includes the original post and a permalink to the ori
 
 *Example context:*
 
-```json
+```js
 {
   "name": "Austin American-Statesman",
   "screen_name": "statesman",
@@ -188,7 +247,7 @@ A link list, rendered as an unordered list in a Bootstrap panel with FontAwesome
 
 *Example context:*
 
-```json
+```js
 {
   "title": "Related stories",
   "links": [{
@@ -236,7 +295,7 @@ Pre-built photo panels that can be dropped into stories. You'll need to see that
 
 *Example context:*
 
-```json
+```js
 {
   "url": "assets/photo.jpg",
   "caption": "newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the.", // optional
@@ -322,12 +381,81 @@ A responsive, chromeless Brightcove video player. It's made responsive using Boo
 
 *Any `.js` file saved to `helpers/` will automatically be made available. Helpers should be written in CommonJS format; they'll be automatically be registered by their filename. The data required data documented below should unless noted be stored in a JavaScript object in the frontmatter and passed.*
 
-#### {{cutline context}}
+---
 
-#### {{#markdown}}Some markdown{{/markdown}}
+#### `{{cutline caption credit}}`
 
-#### {{navLinks}}, {{subNavLinks}}
+Outputs a `<p>`-wrapped cutline, with a right-aligned, `<em>`-wrapped photo credit. This is used in the slideshow partial and all photo partials. Both caption and credit are optional.
 
-#### {{projectUrl filename}}
+*Example usage:*
+```html
+{{cutline 'Someone does something somewhere.' 'Photographer / Statesman'}}
+```
 
-#### {{share network}}
+*Example output:*
+```html
+<p class="caption clearfix">Someone does something somewhere. <em class="pull-right">Photographer / Statesman</em></p>
+```
+
+---
+
+#### `{{#markdown}}{{/markdown}}`
+
+A block helper that will render the wrapped markdown string into HTML.
+
+*Example usage:*
+```html
+{{#markdown}}
+  # Markdown for what
+{{/markdown}}
+```
+
+*Example output:*
+```html
+<h1>Markdown for what</h1>
+```
+
+---
+
+#### `{{navLinks}}`, `{{subNavLinks}}`
+
+These are the helpers responsible for the navs and subnavs used in the nav partials above. They're a bit complex, so it's best to just check out their source for an understanding of how they work.
+
+---
+
+#### `{{projectUrl filename}}`
+
+Generate an absolute URL to a project asset. This is mostly unnecessary because relative URLs will usually suffice, but it's used to generate URLs in places like social meta tags where absolute URLs are required.
+
+*Example usage:*
+```html
+{{projectUrl 'assets/photo.jpg'}}
+```
+
+*Example output:*
+```html
+<!-- Assuming grunt.generator.TASK.options.base is set to http://projects.statesman.com/my-project/ -->
+http://projects.statesman.com/my-project/assets/photo.jpg
+```
+
+---
+
+#### `{{share network}}`
+
+Generates a share button using a FontAwesome icon and the network's sharing URL.
+
+*Example usage:*
+```html
+{{share 'facebook'}}
+```
+
+*Example output:*
+```html
+<a target="_blank" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fprojects.statesman.com%2Ftemplates%2Fimmersive%2F">
+  <i class="fa fa-facebook-square"></i>
+</a>
+```
+
+## Copyright
+
+&copy; 2014 Austin American-Statesman

@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       options: {
         sourceMap: true
       },
-      homepage: {
+      prod: {
         files: {
           'public/dist/scripts.js': [
             'bower_components/jquery/dist/jquery.js',
