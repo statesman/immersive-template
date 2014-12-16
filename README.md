@@ -148,7 +148,7 @@ $ bower add tabletop --save
 
 Then, add the project's `.js` files to `Grunt.uglify.prod.files`, as we've already done for jQuery and a few other libraries:
 
-```
+```js
 'public/dist/scripts.js': [
   'bower_components/jquery/dist/jquery.js',
   'bower_components/underscore/underscore.js',
@@ -317,7 +317,7 @@ A responsive slider that listens for touch events and has a display area for cap
 
 *Example context:*
 
-```json
+```js
 {
   "images": [{
     "url": "assets/photo1.jpg",
@@ -349,7 +349,7 @@ An embedded Twitter status, with links that point to Twitter's [Web intents](htt
 
 *Example context:*
 
-```json
+```js
 {
   "name": "Ralph Haurwitz",
   "screen_name": "ralphhaurwitz",
@@ -367,7 +367,7 @@ A responsive, chromeless Brightcove video player. It's made responsive using Boo
 
 *Example conext:*
 
-```json
+```js
 {
   "playerID": "2305729465001",
   "playerKey": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
