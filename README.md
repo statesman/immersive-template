@@ -170,9 +170,39 @@ Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/
 
 There are two ways you can deploy a project created with this template:
 
-1) `git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
+##### Using `git`
 
-2) Copy the contents of the `public/` directory to your deploy location.
+`git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
+
+##### Using `grunt`
+
+The included `grunt sync` task can copy the built HTML, CSS and JavaScript files to the staging environment. To setup Grunt deployment:
+
+1) update `grunt.sync.stage.files.dest` in Gruntfile.js with the project's location on the staging environment:
+
+```js
+sync: {
+  stage: {
+    files: [{
+      cwd: 'public',
+      src: [
+      '**'
+      ],
+      dest: ENV_STAGE + 'projects/test',
+    }],
+    ignoreInDest: '.htaccess',
+    pretend: true,
+    verbose: true,
+    updateAndDelete: true
+  }
+}
+```
+
+2) either mount the staging environment as `S:` or set your `ENV_STAGE` environment variable to the path to the staging environment.
+
+Now run `grunt sync` and you should see output from a dry run in the console. If everything looks good, you can safely remove the `pretend` option, which will allow the task to actually do I/O.
+
+The task above can be used as a model to deploy to production, as well.
 
 ## Reference
 
