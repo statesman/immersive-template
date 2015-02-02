@@ -53,6 +53,14 @@ module.exports = function(grunt) {
       }
     },
 
+    // Lint our Bootstrap usage
+    bootlint: {
+      options: {
+        relaxerror: ['W005']
+      },
+      files: 'public/**.html',
+    },
+
     // Use Uglify to bundle up a pym file for the home page
     uglify: {
       options: {
@@ -202,9 +210,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-bootlint');
 
   // Assorted build tasks
-  grunt.registerTask('build:html', ['clean:pages', 'generator']);
+  grunt.registerTask('build:html', ['clean:pages', 'generator', 'bootlint']);
   grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
   grunt.registerTask('build:js', ['clean:js', 'jshint', 'uglify']);
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);

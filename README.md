@@ -7,7 +7,7 @@ This project is our go-to tool for generating multipage, off-platform immersive 
 A few key features:
 - a Grunt and Handlebars-driven generator that bakes out flat HTML files
 - a Connect server for development with livereload
-- ready-to-tweak Bootstrap styles and scripts, compiled with Grunt
+- ready-to-tweak Bootstrap styles and scripts, compiled with Grunt and linted with [Bootlint](https://github.com/twbs/bootlint)
 - partials for often-used elements (photo blocks of various sizes, Brightcove videos, etc.)
 - helpers for common tasks (nav and URL generation)
 - sample Apache configs for serving it off of the existing Cox infrastructure
