@@ -5,6 +5,8 @@
 .tmp/
 node_modules/
 .grunt
+.slack
+.ftppass
 
 ### Environment config ###
 .htaccess

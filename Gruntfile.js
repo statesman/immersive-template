@@ -1,4 +1,5 @@
 var ENV_STAGE = process.env.ENV_STAGE || 's:/projects/';
+var fs = require("fs");
 
 module.exports = function(grunt) {
   'use strict';
@@ -195,7 +196,53 @@ module.exports = function(grunt) {
         verbose: true,
         updateAndDelete: true
       }
+    },
+
+    // stage path needs to be set
+    ftpush: {
+      stage: {
+        auth: {
+          host: 'host.coxmediagroup.com',
+          port: 21,
+          authKey: 'cmg'
+        },
+        src: 'public',
+        dest: '/stage_aas/projects/news/immersive-template',
+        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
+        simple: false,
+        useList: false
+      },
+      // prod path will need to change
+      prod: {
+        auth: {
+          host: 'host.coxmediagroup.com',
+          port: 21,
+          authKey: 'cmg'
+        },
+        src: 'public',
+        dest: '/prod_aas/projects/news/immersive-template/',
+        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
+        simple: false,
+        useList: false
+      }
+    },
+
+    // be sure to set publishing paths
+    slack: {
+        options: {
+          endpoint: fs.readFileSync('.slack', {encoding: 'utf8'}),
+          channel: '#bakery',
+          username: 'gruntbot',
+          icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png'
+        },
+        stage: {
+          text: 'Project published to stage: http://stage.host.coxmediagroup.com/aas/projects/news/immersive-template/ {{message}}'
+        },
+        prod: {
+          text: 'Project published to prod: http://projects.statesman.com/news/immersive-template/ {{message}}'
+        }
     }
+
 
   });
 
@@ -211,6 +258,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-sync');
   grunt.loadNpmTasks('grunt-bootlint');
+  grunt.loadNpmTasks('grunt-ftpush');
+  grunt.loadNpmTasks('grunt-slack-hook');
 
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator', 'bootlint']);
@@ -219,7 +268,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks
-  grunt.registerTask('stage', ['build', 'sync:stage']);
+  grunt.registerTask('stage', ['build', 'ftpush:stage','slack:stage']);
 
   // A dev task that runs a build then launches a dev server w/ livereload
   grunt.registerTask('default', ['build', 'concurrent']);
