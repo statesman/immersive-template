@@ -168,13 +168,30 @@ Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/
 
 ### Deploying
 
-There are two ways you can deploy a project created with this template:
+There are three ways you can deploy a project created with this template:
 
 ##### Using `git`
 
 `git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
 
-##### Using `grunt`
+##### Using `grunt sync`
+
+The included [trunt-ftpush](https://github.com/inossidabile/grunt-ftpush) task will deploy the `public` folder through ftp as configured in a file called `.ftppass` in the root of the project.
+
+```
+{
+  "authKeyVar": {
+    "username": "username",
+    "password": "password"
+  }
+}
+```
+
+There is also a [grunt-slack-hook](https://github.com/pwalczyszyn/grunt-slack-hook) task configured to publish the url to slack once published. The URL to your slack hook is should be saved in a file called `.slack` in the root folder.
+
+MAKE SURE both `.ftppass` and `.slack` are included in the `.gitignore` for your project.
+
+##### Using `grunt sync`
 
 The included `grunt sync` task can copy the built HTML, CSS and JavaScript files to the staging environment. To setup Grunt deployment:
 
@@ -203,6 +220,8 @@ sync: {
 Now run `grunt sync` and you should see output from a dry run in the console. If everything looks good, you can safely remove the `pretend` option, which will allow the task to actually do I/O.
 
 The task above can be used as a model to deploy to production, as well.
+
+
 
 ## Reference
 
