@@ -4,15 +4,13 @@
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/
 node_modules/
-
+.grunt
 
 ### Environment config ###
 .htaccess
 
-
 ### Bower ###
 bower_components
-
 
 ### Windows ###
 # Windows image file caches
@@ -33,3 +31,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Built files ###
+build/**
+public/*.html
+public/dist/*.js
+public/dist/*.js.map
+public/dist/*.css
+public/dist/*.css.map
