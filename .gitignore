@@ -34,6 +34,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### OSX ###
+.DS_Store
+
 ### Built files ###
 build/**
 public/*.html

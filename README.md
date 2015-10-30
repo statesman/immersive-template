@@ -10,7 +10,7 @@ A few key features:
 - ready-to-tweak Bootstrap styles and scripts, compiled with Grunt and linted with [Bootlint](https://github.com/twbs/bootlint)
 - partials for often-used elements (photo blocks of various sizes, Brightcove videos, etc.)
 - helpers for common tasks (nav and URL generation)
-- sample Apache configs for serving it off of the existing Cox infrastructure
+- easy deployment using FTP to our Cox infrastructure
 
 ## Requirements
 
@@ -168,17 +168,9 @@ Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/
 
 ### Deploying
 
-There are three ways you can deploy a project created with this template:
+The included [grunt-ftpush](https://github.com/inossidabile/grunt-ftpush) task will deploy the `public` folder through ftp as configured in a file called `.ftppass` in the root of the project.
 
-##### Using `git`
-
-`git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
-
-##### Using `grunt sync`
-
-The included [trunt-ftpush](https://github.com/inossidabile/grunt-ftpush) task will deploy the `public` folder through ftp as configured in a file called `.ftppass` in the root of the project.
-
-```
+```json
 {
   "authKeyVar": {
     "username": "username",
@@ -190,38 +182,6 @@ The included [trunt-ftpush](https://github.com/inossidabile/grunt-ftpush) task w
 There is also a [grunt-slack-hook](https://github.com/pwalczyszyn/grunt-slack-hook) task configured to publish the url to slack once published. The URL to your slack hook is should be saved in a file called `.slack` in the root folder.
 
 MAKE SURE both `.ftppass` and `.slack` are included in the `.gitignore` for your project.
-
-##### Using `grunt sync`
-
-The included `grunt sync` task can copy the built HTML, CSS and JavaScript files to the staging environment. To setup Grunt deployment:
-
-1) update `grunt.sync.stage.files.dest` in Gruntfile.js with the project's location on the staging environment:
-
-```js
-sync: {
-  stage: {
-    files: [{
-      cwd: 'public',
-      src: [
-      '**'
-      ],
-      dest: ENV_STAGE + 'projects/test',
-    }],
-    ignoreInDest: '.htaccess',
-    pretend: true,
-    verbose: true,
-    updateAndDelete: true
-  }
-}
-```
-
-2) either mount the staging environment as `S:` or set your `ENV_STAGE` environment variable to the path to the staging environment.
-
-Now run `grunt sync` and you should see output from a dry run in the console. If everything looks good, you can safely remove the `pretend` option, which will allow the task to actually do I/O.
-
-The task above can be used as a model to deploy to production, as well.
-
-
 
 ## Reference
 
