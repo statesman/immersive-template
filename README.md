@@ -250,6 +250,24 @@ A Facebook post panel that includes the original post and a permalink to the ori
 
 ---
 
+#### `{{> highlights}}`
+
+Add a block of tweetable story highlights. Highlights will be pulled from the page data's highlights attribute. There's no need to pass the data explicitly.
+
+*Example context:*
+
+```js
+{
+  "highlights": [
+    "Families of children who died of abuse and neglect often had long histories with state regulators.",
+    "In many child abuse fatalities, CPS already had an open investigation when the death occurred.",
+    "The Statesman found numerous cases in which a child had been previously removed and returned, only to die later."
+  ]
+}
+```
+
+---
+
 #### `{{> linklist context}}`
 
 A link list, rendered as an unordered list in a Bootstrap panel with FontAwesome list icons.
