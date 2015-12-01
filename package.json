@@ -19,7 +19,6 @@
     "grunt-ftpush": "^0.3.3",
     "grunt-generator": "^0.4.0",
     "grunt-slack-hook": "0.0.4",
-    "grunt-sync": "^0.2.2",
     "handlebars": "^2.0.0",
     "marked": "^0.3.2",
     "underscore": "^1.7.0"

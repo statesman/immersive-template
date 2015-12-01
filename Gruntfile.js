@@ -180,24 +180,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // A multi-task to publish static files from public/ to the staging
-    // environment
-    sync: {
-      stage: {
-        files: [{
-          cwd: 'public',
-          src: [
-          '**'
-          ],
-          dest: ENV_STAGE + 'projects/test',
-        }],
-        ignoreInDest: '.htaccess',
-        pretend: true,
-        verbose: true,
-        updateAndDelete: true
-      }
-    },
-
     // stage path needs to be set
     ftpush: {
       stage: {
@@ -256,7 +238,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-generator');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-sync');
   grunt.loadNpmTasks('grunt-bootlint');
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-slack-hook');
