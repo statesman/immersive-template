@@ -183,6 +183,8 @@ There is also a [grunt-slack-hook](https://github.com/pwalczyszyn/grunt-slack-ho
 
 MAKE SURE both `.ftppass` and `.slack` are included in the `.gitignore` for your project.
 
+ALSO MAKE SURE to fill out the `cmg-footer-scripts.hbs` partial for hte project.
+
 ## Reference
 
 ### Included partials
@@ -218,11 +220,7 @@ Markup for a Bootstrap `<blockquote>`
 
 Analytics code for SiteCatalyst, Quantcast and Chartbeat.
 
----
-
-#### `{{> cmg-footer-scripts}}`
-
-Analytics code for SiteCatalyst, Quantcast and Chartbeat.
+*Make sure you update these for each project*
 
 ---
 
