@@ -138,14 +138,14 @@ module.exports = function(grunt) {
           base: 'http://projects.statesman.com/templates/immersive/',
           nav: [
             {
-              title: "Story 1",
-              subtitle: "Explaining story 1",
+              title: "Index",
+              subtitle: "Overview",
               file: "index",
               children: [
                 {
                   title: "Sub-story 1",
                   subtitle: "Explaining story 1",
-                  file: "page2"
+                  file: "page1"
                 },
                 {
                   title: "Sub-story 2",
@@ -158,6 +158,11 @@ module.exports = function(grunt) {
                   file: "page3"
                 }
               ]
+            },
+            {
+              title: "Story 1",
+              subtitle: "More on story 1",
+              file: "page1"
             },
             {
               title: "Story 2",
