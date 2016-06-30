@@ -1,4 +1,4 @@
-(function($, Slider) {
+(function($, Slick) {
 
   "use strict";
 
@@ -22,10 +22,10 @@
     $('.slider').each(function(i, el) {
       $(el).imagesLoaded()
         .always(function() {
-          new Slider(el);
+          new Slick(el);
         });
     });
 
   });
 
-}(jQuery, Slider));
+}(jQuery, Slick));

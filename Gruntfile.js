@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
         files: {
           "public/dist/style.css": [
-              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick.less",
               "src/css/style.less"
           ]
         }
