@@ -5,8 +5,29 @@ var request = require("request");
 module.exports = function(grunt) {
   'use strict';
 
-  // this is the directory path to your project on the stage/prod servers
-  var site_path = "immersive-template";
+  /*
+    ~~~ set configuration here ~~~
+
+    - site_dir: the site section to publish to
+      e.g., "news" in http://projects.statesman.com/news/cps-missed-signs/
+
+    - site_path: the URL endpoint to publish to
+      e.g., "cps-missed-signs" in http://projects.statesman.com/news/cps-missed-signs/
+
+    - slack_username: what slack username do you want to use
+
+    - slack_icon_emoji: what slack icon do you want to use
+      reference: http://www.emoji-cheat-sheet.com/
+      (don't forget to bracket with colons)
+
+  */
+
+  var config = {
+    site_dir: "news",
+    site_path: "immersive-template",
+    slack_username: "NeckbeardBot",
+    slack_icon_emoji: ":neckbeard:"
+  };
 
   // Project configuration.
   grunt.initConfig({
@@ -202,7 +223,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/stage_aas/projects/news/' + site_path,
+        dest: ['/stage_aas/projects', config.site_dir, config.site_path].join("/"),
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -215,7 +236,7 @@ module.exports = function(grunt) {
           authKey: 'cmg'
         },
         src: 'public',
-        dest: '/prod_aas/projects/news/' + site_path,
+        dest: ['/prod_aas/projects', config.site_dir, config.site_path].join("/"),
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -248,14 +269,13 @@ grunt.registerTask('slack', function(where_dis_go) {
         var done = this.async();
 
         // prod or stage?
-        var ftp_path = where_dis_go === "prod" ? "http://projects.statesman.com/news/" + site_path : "http://stage.host.coxmediagroup.com/aas/projects/news/" + site_path;
+        var ftp_path = where_dis_go === "prod" ? ["http://projects.statesman.com", config.site_dir, config.site_path].join("/") : ["http://stage.host.coxmediagroup.com/aas/projects", config.site_dir, config.site_path].join("/");
 
-        // do whatever makes you feel happy here
         var payload = {
-            "text": "yo dawg i heard you like pushing code to *immersive-template*: " + ftp_path,
-            "channel": "#bakery",
-            "username": "Xzibit",
-            "icon_url": "http://projects.statesman.com/slack/icon_img/xzibit.jpg"
+            "text": "hello yes i am pushing code to *" + config.site_path +  "*: " + ftp_path,
+            "channel": "@cjwinchester",
+            "username": config.slack_username,
+            "icon_emoji": config.slack_icon_emoji
         };
 
         // send the request

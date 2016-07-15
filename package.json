@@ -9,20 +9,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Andrew Chavez <adchavez@gmail.com>",
+  "author": "Statesman Interactives <interactives@statesman.com>",
   "devDependencies": {
-    "grunt-bootlint": "^0.7.0",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.12.0",
+    "grunt-bootlint": "^0.10.1",
+    "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-uglify": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-ftpush": "^0.3.3",
     "grunt-generator": "^0.4.0",
-    "handlebars": "^2.0.0",
+    "handlebars": "^4.0.5",
     "marked": "^0.3.2",
     "request": "^2.72.0"
   },
@@ -30,6 +30,7 @@
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.6.3",
     "imagesloaded": "^4.1.0",
+    "request": "^2.73.0",
     "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.6.0",
     "underscore": "^1.8.3"
