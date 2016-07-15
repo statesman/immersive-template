@@ -40,12 +40,6 @@ module.exports = function(network) {
         return 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&related=@aasinteractive';
       },
       icon: '<i class="fa fa-twitter"></i>'
-    },
-    gplus: {
-      url: function() {
-        return 'https://plus.google.com/share?url=' + encodeURIComponent(url);
-      },
-      icon: '<i class="fa fa-google-plus"></i>'
     }
   };
 
