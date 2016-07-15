@@ -273,7 +273,7 @@ grunt.registerTask('slack', function(where_dis_go) {
 
         var payload = {
             "text": "hello yes i am pushing code to *" + config.site_path +  "*: " + ftp_path,
-            "channel": "@cjwinchester",
+            "channel": "#bakery",
             "username": config.slack_username,
             "icon_emoji": config.slack_icon_emoji
         };
