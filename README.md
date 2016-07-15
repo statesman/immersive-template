@@ -16,7 +16,6 @@ A few key features:
 
 - Node.js
 - Grunt
-- Bower
 
 ## Setup
 
@@ -29,7 +28,6 @@ $ cd YOUR_PROJECT_NAME
 Install dependencies:
 ```
 $ npm install
-$ bower install
 ```
 
 ## Usage
@@ -165,6 +163,8 @@ The same applies if you'd like to add any of Bootstrap's JavaScript modules, whi
 You can also write your own JavaScript modules and save them in `src/js/` and add them to the same Grunt array to have them packaged with the final build.
 
 Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/). If you get a JShint warning that's unclear, you can look it up at [jslinterrors.com](https://jslinterrors.com/).
+
+If you have some bespoke javascript
 
 ### Deploying
 
@@ -408,6 +408,22 @@ A responsive, chromeless Brightcove video player. It's made responsive using Boo
 
 ---
 
+#### `{{copyrightYear}}`
+
+Outputs the current year, as of that build, in the copyright block of the index page footer.
+
+*Example usage:*
+```html
+{{copyrightYear}}
+```
+
+*Example output:*
+```html
+2016
+```
+
+---
+
 #### `{{cutline caption credit}}`
 
 Outputs a `<p>`-wrapped cutline, with a right-aligned, `<em>`-wrapped photo credit. This is used in the slideshow partial and all photo partials. Both caption and credit are optional.
@@ -483,4 +499,4 @@ Generates a share button using a FontAwesome icon and the network's sharing URL.
 
 ## Copyright
 
-&copy; 2014 Austin American-Statesman
+&copy; 2016 Austin American-Statesman
