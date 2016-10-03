@@ -5,29 +5,25 @@ var request = require("request");
 module.exports = function(grunt) {
   'use strict';
 
-  /*
-    ~~~ set configuration here ~~~
+  /* project-specific config */
 
-    - site_dir: the site section to publish to
-      e.g., "news" in http://projects.statesman.com/news/cps-missed-signs/
+  // site section to publish to
+  var site_dir = "news";
 
-    - site_path: the URL endpoint to publish to
-      e.g., "cps-missed-signs" in http://projects.statesman.com/news/cps-missed-signs/
+  // URL endpoint
+  var site_path = "immersive-template";
 
-    - slack_username: what slack username do you want to use
+  // stage URL for ftpass
+  var ftp_stage_url = ['/stage_aas/projects', site_dir, site_path].join("/");
 
-    - slack_icon_emoji: what slack icon do you want to use
-      reference: http://www.emoji-cheat-sheet.com/
-      (don't forget to bracket with colons)
+  // prod URL for ftpass
+  var ftp_prod_url = ['/prod_aas/projects', site_dir, site_path].join("/");
 
-  */
+  // stage URL for humans
+  var stage_url = ['http://stage.host.coxmediagroup.com/aas/projects', site_dir, site_path].join("/");
 
-  var config = {
-    site_dir: "news",
-    site_path: "immersive-template",
-    slack_username: "NeckbeardBot",
-    slack_icon_emoji: ":neckbeard:"
-  };
+  // prod URL for humans
+  var prod_url = ['http://projects.statesman.com', site_dir, site_path].join("/");
 
   // Project configuration.
   grunt.initConfig({
@@ -218,12 +214,12 @@ module.exports = function(grunt) {
     ftpush: {
       stage: {
         auth: {
-          host: 'host.coxmediagroup.com',
+          host: 'cmgdtcpxahost.cmg.int',
           port: 21,
           authKey: 'cmg'
         },
         src: 'public',
-        dest: ['/stage_aas/projects', config.site_dir, config.site_path].join("/"),
+        dest: ftp_stage_url,
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -231,12 +227,12 @@ module.exports = function(grunt) {
       // prod path will need to change
       prod: {
         auth: {
-          host: 'host.coxmediagroup.com',
+          host: 'cmgdtcpxahost.cmg.int',
           port: 21,
           authKey: 'cmg'
         },
         src: 'public',
-        dest: ['/prod_aas/projects', config.site_dir, config.site_path].join("/"),
+        dest: ftp_prod_url,
         exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
         simple: false,
         useList: false
@@ -269,13 +265,18 @@ grunt.registerTask('slack', function(where_dis_go) {
         var done = this.async();
 
         // prod or stage?
-        var ftp_path = where_dis_go === "prod" ? ["http://projects.statesman.com", config.site_dir, config.site_path].join("/") : ["http://stage.host.coxmediagroup.com/aas/projects", config.site_dir, config.site_path].join("/");
+        var ftp_path = where_dis_go === "prod" ? prod_url : stage_url;
 
         var payload = {
-            "text": "hello yes i am pushing code to *" + config.site_path +  "*: " + ftp_path,
+            "text": "hello yes i am pushing code to *" + site_path +  "*: " + ftp_path,
             "channel": "#bakery",
-            "username": config.slack_username,
-            "icon_emoji": config.slack_icon_emoji
+            "username": "NeckbeardBot",
+            "icon_emoji": ":neckbeard:"
+            /*
+            or you can use `icon_url` instead of `icon_emoji`
+
+            "icon_url": "http://media.cmgdigital.com/shared/theme-assets/162015/www.statesman.com_9f682704ca40465daf5d77e9b1d1f2b5.png"
+            */
         };
 
         // send the request
