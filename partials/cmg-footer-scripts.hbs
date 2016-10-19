@@ -4,7 +4,7 @@ var projectSite = "statesman";
 var projectChannel = "news";
 var projectCategory = "local";
 var projectSubCategory = "project";
-var projectByline = "firstname lastname"; // lowercase comma separated
+var projectByline = "{{#if page.byline}}{{#each page.byline}}{{this}}{{#unless @last}},{{/unless}}{{/each}}{{/if}}"; // lowercase comma separated
 </script>
 
 <!-- statesman sitecatalyst to test blanks -->
