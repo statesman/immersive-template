@@ -497,6 +497,19 @@ Generates a share button using a FontAwesome icon and the network's sharing URL.
 </a>
 ```
 
+## Projects
+These projects were built with the immersive template.
+
+| Title  | Date | URL | Repo |
+| -----  | ---  | :---:  | :---:  |
+| Inheriting inequality | Jan. 2015  | [:page_facing_up:](http://projects.statesman.com/news/economic-mobility/) | [:octocat:](https://github.com/statesman/economic-mobility) |
+| Missed Signs  | Jan. 2015  | [:page_facing_up:](http://projects.statesman.com/news/cps-missed-signs/) | [:octocat:](https://github.com/statesman/cps) |
+| Paid to Prosecute  | Sept. 2015  | [:page_facing_up:](http://projects.statesman.com/news/paid-to-prosecute/) | [:octocat:](https://github.com/statesman/paid-to-prosecute) |
+| Casualties of the Streets  | Nov. 2015  | [:page_facing_up:](http://projects.statesman.com/news/homeless-deaths/) | [:octocat:](https://github.com/statesman/homeless-deaths) |
+| UT Tower 50th  | July 2016  | [:page_facing_up:](http://projects.statesman.com/news/ut-tower-shooting-50th-anniversary/) | [:octocat:](https://github.com/statesman/ut-tower-shooting-50th) |
+| Silent majority  | Oct. 2016  | [:page_facing_up:](http://projects.statesman.com/news/latino-representation/) | [:octocat:](https://github.com/statesman/local-latino-representation) |
+
+
 ## Copyright
 
 &copy; 2016 Austin American-Statesman
