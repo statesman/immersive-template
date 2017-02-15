@@ -49,6 +49,6 @@ module.exports = function(network) {
   }
 
   return new Handlebars.SafeString(
-    '<a target="_blank" href="' + networks[network].url() + '">' + networks[network].icon + '</a>'
+    '<a target="_blank" href="' + networks[network].url() + '" title="Share on ' + network + '">' + networks[network].icon + '</a>'
   );
 };
