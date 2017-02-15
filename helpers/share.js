@@ -11,6 +11,9 @@ var Handlebars = require('handlebars'),
 module.exports = function(network) {
   var err = this.options.grunt.log.error || console.error;
 
+  // Get the page's frontmatter so we can use it to build tweets later
+  var pageMeta = _.findWhere(this.pages, {name: this.name});
+
   if(_.isUndefined(network)) {
     err('network is required for the socialShareUrl helper');
     return;
@@ -37,7 +40,7 @@ module.exports = function(network) {
     },
     twitter: {
       url: function() {
-        return 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&related=@aasinteractive';
+        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(pageMeta.title) + '&url=' + encodeURIComponent(url) + '&related=@aasinteractive';
       },
       icon: '<i class="fa fa-twitter"></i>'
     }
