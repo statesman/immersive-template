@@ -508,6 +508,7 @@ These projects were built with the immersive template.
 | Casualties of the Streets  | Nov. 2015  | [:page_facing_up:](http://projects.statesman.com/news/homeless-deaths/) | [:octocat:](https://github.com/statesman/homeless-deaths) |
 | UT Tower 50th  | July 2016  | [:page_facing_up:](http://projects.statesman.com/news/ut-tower-shooting-50th-anniversary/) | [:octocat:](https://github.com/statesman/ut-tower-shooting-50th) |
 | Silent majority  | Oct. 2016  | [:page_facing_up:](http://projects.statesman.com/news/latino-representation/) | [:octocat:](https://github.com/statesman/local-latino-representation) |
+| The Talk  | Feb. 2017  | [:page_facing_up:](http://projects.statesman.com/news/the-talk/) | [:octocat:](https://github.com/statesman/police-relations) |
 
 
 ## Copyright
