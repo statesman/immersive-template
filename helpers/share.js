@@ -34,7 +34,7 @@ module.exports = function(network) {
   var networks = {
     facebook: {
       url: function() {
-        return 'https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url);
+        return 'https://www.facebook.com/dialog/share?app_id=135078579956731&display=page&href=' + encodeURIComponent(url);
       },
       icon: '<i class="fa fa-facebook-square"></i>'
     },
