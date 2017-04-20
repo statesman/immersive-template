@@ -394,9 +394,9 @@ A responsive, chromeless Brightcove video player. It's made responsive using Boo
 
 ```js
 {
-  "playerID": "2305729465001",
-  "playerKey": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
-  "videoPlayer": "3595824850001"
+  "video-id": "2305729465001",
+  "account-id": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
+  "player-id": "3595824850001"
 }
 ```
 
