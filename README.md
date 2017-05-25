@@ -128,6 +128,41 @@ nav: [
 ]
 ```
 
+### Adding video
+
+#### Anvato
+
+To add an Anvato video to a story or index in the [immersive-template](), you need to use the `video-block-anvato` or `video-full-anvato` partials (which also rely on the `video-ad.js` helper), and supply these values in the front matter:
+
+```
+  "videoUniqueName": {
+    "anvatoInstance": "p0",
+    "anvatoType": "video",
+    "anvatoId": "3928772",
+    "anvatoAd": "statesman"
+  }
+```
+
+- The `anvatoInstance` is the unique name of the div and matching values for this video. It does not matter what the value is, but it cannot be the same as any other video on the page.
+- `anvatoType` value is either "video", which is used for a single video, or "playlist", which is used to display a playlist.
+- The `anvatoId` used depends on teh `anvatoType` chosen above.
+    +  If using for a single video, you would use the UPLOAD ID of the video gained from the [Anvato admin](http://mcp.anvato.com/cms/videos/1).
+    +  If using for a playlist, you would use the the GROUP ID from the Anvato admin.
+- The `anvatoAd` sets the proper ad tag in the player and has three possible values: "statseman", "austin360", "mystatesman". The mystatesman version removes the ad. If not `anvatoAd` value is set, it assumes "statesman".
+
+Note you may need some additional javascript and css to have a playlist that displays as thumbnails.
+
+#### Youtube
+
+The YouTube `video-full-youtube` and `video-full-youtube` partials only require one value, the source of the url.
+
+```
+  "videoOverview": {
+    "ytsrc": "https://www.youtube.com/embed/sggsXaCZNMs"
+  },
+```
+
+
 ### Changing styles
 
 The project is structured so that only the Bootstrap styles you want are compiled into the final `public/dist/style.css` file. To add and remove Bootstrap Less modules, comment/uncomment the corresponding lines in `src/css/custom-bootstrap/bootstrap.less`. To override Bootstrap variables, edit `src/css/custom-bootstrap/variables.less`.
