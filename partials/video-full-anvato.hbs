@@ -6,20 +6,20 @@
 <script>
     var anvp = {};
     anvp.{{anvatoInstance}} = {};
-    
+
     anvp.{{anvatoInstance}}.onReady = function(playerInstance) {
     var _cbv = window._cbv || (window._cbv = []);
-    _cbv.push(playerInstance); 
+    _cbv.push(playerInstance);
     }
-    
+
     anvp.{{anvatoInstance}}.config = {
         accessKey: "XvEgwyJR0vj8Kh8JMNTbWhW8mOmy8Mbo",
         secret: "9rK1W2wdNoxrRfwlvehvpFedDZDYG0Nd",
         token: " ",
-        autoplay: false,// boolean 
-        volume: 1, // volume 1, 0 or decimal e.g. 0.5
-        recom: false, //recommendation end slate boolean
-        
+        autoplay: false, {{!-- boolean --}}
+        volume: 1, {{!-- volume 1, 0 or decimal e.g. 0.5 --}}
+        recom: false, {{!-- recommendation end slate boolean --}}
+
         plugins: {
             {{ video-ad anvatoAd }}
             comscore: {
