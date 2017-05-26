@@ -419,22 +419,6 @@ An embedded Twitter status, with links that point to Twitter's [Web intents](htt
 }
 ```
 
----
-
-#### `{{> video-block-brightcove context}}`
-
-A responsive, chromeless Brightcove video player. It's made responsive using Bootstrap's [responsive embed](http://getbootstrap.com/components/#responsive-embed).
-
-*Example conext:*
-
-```js
-{
-  "video-id": "2305729465001",
-  "account-id": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
-  "player-id": "3595824850001"
-}
-```
-
 ### Included helpers
 
 *Helpers can be used using the regular Handlebars convention: `{{helper context}}` for regular helpers and `{{#helper}}{{/helper}}` for block helpers. They can be passed an optional context, but have access to the global context if none is provided.*
