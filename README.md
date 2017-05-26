@@ -144,8 +144,8 @@ To add an Anvato video to a story or index in the [immersive-template](), you ne
 ```
 
 - The `anvatoInstance` is the unique name of the div and matching values for this video. It does not matter what the value is, but it cannot be the same as any other video on the page.
-- `anvatoType` value is either "video", which is used for a single video, or "playlist", which is used to display a playlist.
-- The `anvatoId` used depends on teh `anvatoType` chosen above.
+- `anvatoType` value is either `"video"`, which is used for a single video, or `"playlist"`, which is used to display a playlist.
+- The `anvatoId` used depends on the `anvatoType` chosen above.
     +  If using for a single video, you would use the UPLOAD ID of the video gained from the [Anvato admin](http://mcp.anvato.com/cms/videos/1).
     +  If using for a playlist, you would use the the GROUP ID from the Anvato admin.
 - The `anvatoAd` sets the proper ad tag in the player and has three possible values: "statseman", "austin360", "mystatesman". The mystatesman version removes the ad. If not `anvatoAd` value is set, it assumes "statesman".
@@ -416,22 +416,6 @@ An embedded Twitter status, with links that point to Twitter's [Web intents](htt
   "image": "https://pbs.twimg.com/profile_images/1097015353/Picture_277.png",
   "text": "Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.",
   "id": "532618297662242816"
-}
-```
-
----
-
-#### `{{> video-block-brightcove context}}`
-
-A responsive, chromeless Brightcove video player. It's made responsive using Bootstrap's [responsive embed](http://getbootstrap.com/components/#responsive-embed).
-
-*Example conext:*
-
-```js
-{
-  "video-id": "2305729465001",
-  "account-id": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
-  "player-id": "3595824850001"
 }
 ```
 
