@@ -148,7 +148,7 @@ To add an Anvato video to a story or index in the [immersive-template](), you ne
 - The `anvatoId` used depends on the `anvatoType` chosen above.
     +  If using for a single video, you would use the UPLOAD ID of the video gained from the [Anvato admin](http://mcp.anvato.com/cms/videos/1).
     +  If using for a playlist, you would use the the GROUP ID from the Anvato admin.
-- The `anvatoAd` sets the proper ad tag in the player and has three possible values: "statseman", "austin360", "mystatesman". The mystatesman version removes the ad. If not `anvatoAd` value is set, it assumes "statesman".
+- The `anvatoAd` sets the proper ad tag in the player and has three possible values: "statseman", "austin360", "mystatesman". The mystatesman version removes the ad. If no `anvatoAd` value is set, it assumes "statesman".
 
 Note you may need some additional javascript and css to have a playlist that displays as thumbnails.
 
