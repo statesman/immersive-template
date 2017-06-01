@@ -128,6 +128,41 @@ nav: [
 ]
 ```
 
+### Adding video
+
+#### Anvato
+
+To add an Anvato video to a story or index in the [immersive-template](), you need to use the `video-block-anvato` or `video-full-anvato` partials (which also rely on the `video-ad.js` helper), and supply these values in the front matter:
+
+```
+  "videoUniqueName": {
+    "anvatoInstance": "p0",
+    "anvatoType": "video",
+    "anvatoId": "3928772",
+    "anvatoAd": "statesman"
+  }
+```
+
+- The `anvatoInstance` is the unique name of the div and matching values for this video. It does not matter what the value is, but it cannot be the same as any other video on the page.
+- `anvatoType` value is either `"video"`, which is used for a single video, or `"playlist"`, which is used to display a playlist.
+- The `anvatoId` used depends on the `anvatoType` chosen above.
+    +  If using for a single video, you would use the UPLOAD ID of the video gained from the [Anvato admin](http://mcp.anvato.com/cms/videos/1).
+    +  If using for a playlist, you would use the the GROUP ID from the Anvato admin.
+- The `anvatoAd` sets the proper ad tag in the player and has three possible values: "statseman", "austin360", "mystatesman". The mystatesman version removes the ad. If no `anvatoAd` value is set, it assumes "statesman".
+
+Note you may need some additional javascript and css to have a playlist that displays as thumbnails.
+
+#### Youtube
+
+The YouTube `video-full-youtube` and `video-full-youtube` partials only require one value, the source of the url.
+
+```
+  "videoOverview": {
+    "ytsrc": "https://www.youtube.com/embed/sggsXaCZNMs"
+  },
+```
+
+
 ### Changing styles
 
 The project is structured so that only the Bootstrap styles you want are compiled into the final `public/dist/style.css` file. To add and remove Bootstrap Less modules, comment/uncomment the corresponding lines in `src/css/custom-bootstrap/bootstrap.less`. To override Bootstrap variables, edit `src/css/custom-bootstrap/variables.less`.
@@ -381,22 +416,6 @@ An embedded Twitter status, with links that point to Twitter's [Web intents](htt
   "image": "https://pbs.twimg.com/profile_images/1097015353/Picture_277.png",
   "text": "Fifth U.S. Circuit Court of Appeals declines to take up UT's Fisher case en banc. Fisher's option is to appeal to the Supreme Court.",
   "id": "532618297662242816"
-}
-```
-
----
-
-#### `{{> video-block-brightcove context}}`
-
-A responsive, chromeless Brightcove video player. It's made responsive using Bootstrap's [responsive embed](http://getbootstrap.com/components/#responsive-embed).
-
-*Example conext:*
-
-```js
-{
-  "video-id": "2305729465001",
-  "account-id": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
-  "player-id": "3595824850001"
 }
 ```
 

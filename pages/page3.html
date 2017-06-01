@@ -1,14 +1,22 @@
 {
   "template" : "story",
-  "title": "Page 2",
+  "title": "Page 3",
   "description": "This is a starter template",
-  "thumbnail": "assets/thumbnail.jpg"
+  "thumbnail": "assets/thumbnail.jpg",
+    "videoUniqueName": {
+      "anvatoInstance": "p0",
+      "anvatoType": "video",
+      "anvatoId": "3928772",
+      "anvatoAd": "mystatesman"
+  }
 }
 ---
 
 <div class="container">
   <div class="row">
     <article id="main" class="col-xs-12">
+
+      {{> video-full-anvato page.videoUniqueName}}
 
       <h6>Project overline</h6>
       <h1>Page 3</h1>
