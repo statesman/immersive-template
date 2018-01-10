@@ -1,29 +1,21 @@
 var ENV_STAGE = process.env.ENV_STAGE || 's:/projects/';
 var fs = require("fs");
 var request = require("request");
+var config = require("./project.config");
 
 module.exports = function(grunt) {
   'use strict';
 
   /* project-specific config */
 
-  // site section to publish to
-  var site_dir = "news";
-
   // URL endpoint
-  var site_path = "immersive-template";
+  var site_path = config.sitePath;
 
-  // stage URL for ftpass
-  var ftp_stage_url = ['/stage_aas/projects', site_dir, site_path].join("/");
+  // stage URL
+  var stageUrl = ['https://s3-us-west-2.amazonaws.com/dev.apps.statesman.com', config.sitePath, 'index.html'].join("/");
 
-  // prod URL for ftpass
-  var ftp_prod_url = ['/prod_aas/projects', site_dir, site_path].join("/");
-
-  // stage URL for humans
-  var stage_url = ['http://stage.host.coxmediagroup.com/aas/projects', site_dir, site_path].join("/");
-
-  // prod URL for humans
-  var prod_url = ['http://projects.statesman.com', site_dir, site_path].join("/");
+  // prod URL
+  var prodUrl = ['https:///apps.statesman.com', config.sitePath, 'index.html'].join("/");
 
   // Project configuration.
   grunt.initConfig({
@@ -208,37 +200,7 @@ module.exports = function(grunt) {
           ]
         }
       }
-    },
-
-    // stage path needs to be set
-    ftpush: {
-      stage: {
-        auth: {
-          host: 'cmgdtcpxahost.cmg.int',
-          port: 21,
-          authKey: 'cmg'
-        },
-        src: 'public',
-        dest: ftp_stage_url,
-        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
-        simple: false,
-        useList: false
-      },
-      // prod path will need to change
-      prod: {
-        auth: {
-          host: 'cmgdtcpxahost.cmg.int',
-          port: 21,
-          authKey: 'cmg'
-        },
-        src: 'public',
-        dest: ftp_prod_url,
-        exclusions: ['dist/tmp','Thumbs.db','.DS_Store'],
-        simple: false,
-        useList: false
-      }
-    },
-
+    }
   });
 
   // Load the task plugins
@@ -252,7 +214,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-bootlint');
-  grunt.loadNpmTasks('grunt-ftpush');
+  grunt.loadTasks('tasks');
 
 // register a custom task to hit slack
 grunt.registerTask('slack', function(where_dis_go) {
@@ -265,10 +227,10 @@ grunt.registerTask('slack', function(where_dis_go) {
         var done = this.async();
 
         // prod or stage?
-        var ftp_path = where_dis_go === "prod" ? prod_url : stage_url;
+        var deployUrl = where_dis_go === "prod" ? prodUrl : stageUrl;
 
         var payload = {
-            "text": "hello yes i am pushing code to *" + site_path +  "*: " + ftp_path,
+            "text": "hello yes i am pushing code to *" + site_path +  "*: " + deployUrl,
             "channel": "#bakery",
             "username": "NeckbeardBot",
             "icon_emoji": ":neckbeard:"
@@ -306,7 +268,9 @@ grunt.registerTask('slack', function(where_dis_go) {
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks
-  grunt.registerTask('stage', ['build', 'ftpush:stage','slack:stage']);
+  grunt.registerTask('stage', ['build', 'deployS3:stage', 'slack:stage']);
+
+  grunt.registerTask('prod', ['build', 'deployS3:prod', 'slack:prod']);
 
   // A dev task that runs a build then launches a dev server w/ livereload
   grunt.registerTask('default', ['build', 'concurrent']);

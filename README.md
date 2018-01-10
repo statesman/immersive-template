@@ -44,6 +44,8 @@ First things first, you should probably understand where everything lives and wh
 
 `partials/`: these are little snippets, in the Handlebars partials format, that can be used to generate slideshows, inline photos, etc.
 
+`tasks/`: this contains grunt tasks loaded by the Gruntfile.
+
 `public/`: in production, this is the folder that actually serves the project (or it can be the only piece of the project you actually move to production)
 
 `src/css/`: `less` files that Grunt will transpile into CSS in `public/dist/style.css`
@@ -203,20 +205,17 @@ If you have some bespoke javascript
 
 ### Deploying
 
-The included [grunt-ftpush](https://github.com/inossidabile/grunt-ftpush) task will deploy the `public` folder through ftp as configured in a file called `.ftppass` in the root of the project.
+The included `deployS3` task will deploy the `public` folder to s3 at the path defined in `project.config.json` at the root of the project.
 
 ```json
 {
-  "authKeyVar": {
-    "username": "username",
-    "password": "password"
-  }
+  "sitePath": "news/immersive-template"
 }
 ```
 
 There is also a [grunt-slack-hook](https://github.com/pwalczyszyn/grunt-slack-hook) task configured to publish the url to slack once published. The URL to your slack hook is should be saved in a file called `.slack` in the root folder.
 
-MAKE SURE both `.ftppass` and `.slack` are included in the `.gitignore` for your project.
+MAKE SURE `.slack` is included in the `.gitignore` for your project.
 
 ALSO MAKE SURE to fill out the `cmg-footer-scripts.hbs` partial for hte project.
 
