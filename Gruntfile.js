@@ -74,7 +74,7 @@ module.exports = function(grunt) {
     // Lint our Bootstrap usage
     bootlint: {
       options: {
-        relaxerror: ['W005']
+        relaxerror: ['W005', 'E013']
       },
       files: 'public/**.html',
     },
