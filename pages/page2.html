@@ -3,14 +3,21 @@
   "title": "Page 2",
   "description": "This is a starter template",
   "thumbnail": "assets/thumbnail.jpg",
+  "videoUniqueName": {
+      "anvatoInstance": "p0",
+      "anvatoType": "video",
+      "anvatoId": "3928772",
+      "anvatoAd": "mystatesman"
+  },
   "byline": ["John Doe"]
-
 }
 ---
 
 <div class="container">
   <div class="row">
     <article id="main" class="col-xs-12">
+
+      {{> video-full-anvato page.videoUniqueName}}
 
       <h6>Project overline</h6>
       <h1>Page 2</h1>

@@ -548,12 +548,16 @@ You also need additional CSS to fix some bootstrap conflicts on the login mode. 
 
 There is a `byline` node in the frontmatter of stories that fills a metadata value, which is then used for metrics. Keep that even if you don't use the `{{ page.byline }}` in your page.
 
+#### overriding at the layout level
+- There is an `index.hbs` layout that overrides the `contentType` and `meter` settings. That **could** be extrapolated to prematter.
+
 ### Wrap without a meter
 
-`layouts/free.hbs` is set up for this. Differences are:
+`layouts/free.hbs` is set up for this, and page3.html is using it. Differences are:
 
 - `cmg-head-style.hbs` is not needed.
-- in `cmg-head-metadata.hbs`,  change `<meta name="cmg:meter" content="true">` to `false`, along with whatever other mods needed.
+- after calling `cmg-head-metadata.hbs`, the `<meta name="cmg:meter" content="true">` is overwritten to ensure it is `false`. You still need to update other metadata as needed.
+- `cmg-body-modals` and `cmg-body-janrain` are not needed.
 - `cmg-body-free-premetrics.hbs` is added before `cmg-body-metrics.hbs`. It may need modification based on your site.
 - remove `@import modals.less;` from `styles.less`.
 
