@@ -515,6 +515,52 @@ Generates a share button using a FontAwesome icon and the network's sharing URL.
 </a>
 ```
 
+## The wrap: metrics, meter and ads
+
+There are a series of `cmg-` files in `/partials/` that comprise the "BigJ" wrap. They are used in different combinations depending your project needs.
+
+### For a metered project
+
+`/layouts/story.hbs` is set up for metered.
+
+The head files should be pulled into your base template at the bottom of the `</head>`` in this order.
+
+- `cmg-head-styles.hbs`: Styles for logins. No modifications needed.
+- `cmg-head-ads.hbs`: Ad tag configurations. No modifications needed.
+- `cmg-head-metadata.hbs`: Update content [based on your project](https://docs.google.com/spreadsheets/d/1_jJAlKcxF_QviB3lK29l3LG2cnYUYM-sEJttRJ5HPYA/edit#gid=0).
+- `cmg-head-metrics`: Metric code. No modifications needed.
+
+The body files come next:
+
+- `cmg-body-modals.hbs`: Has modals (these fail bootlinting)
+- `cmg-body-metrics.hbs`: Has metrics. No mods needed.
+- `cmg-body-janrain.hbs`: 
+
+The `cmg-body-modals` file causes to bootlint errors. There are two `<button>` tags that need `type="button"` added, [as noted here](https://github.com/twbs/bootlint/wiki/W007. This is already done.
+
+The other error is throws is a [column children error E013](https://github.com/twbs/bootlint/wiki/E013), but I can't figure out how to fix that.
+
+You also need additional CSS to fix some bootstrap conflicts on the login mode. Add this to your `styles.less` file:
+
+```css
+@import 'modals.less';
+```
+
+There is a `byline` node in the frontmatter of stories that fills a metadata value, which is then used for metrics. Keep that even if you don't use the `{{ page.byline }}` in your page.
+
+#### overriding at the layout level
+- There is an `index.hbs` layout that overrides the `contentType` and `meter` settings. That **could** be extrapolated to prematter.
+
+### Wrap without a meter
+
+`layouts/free.hbs` is set up for this, and page3.html is using it. Differences are:
+
+- `cmg-head-style.hbs` is not needed.
+- after calling `cmg-head-metadata.hbs`, the `<meta name="cmg:meter" content="true">` is overwritten to ensure it is `false`. You still need to update other metadata as needed.
+- `cmg-body-modals` and `cmg-body-janrain` are not needed.
+- `cmg-body-free-premetrics.hbs` is added before `cmg-body-metrics.hbs`. It may need modification based on your site.
+- remove `@import modals.less;` from `styles.less`.
+
 ## Projects
 These projects were built with the immersive template.
 

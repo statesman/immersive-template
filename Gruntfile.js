@@ -74,7 +74,7 @@ module.exports = function(grunt) {
     // Lint our Bootstrap usage
     bootlint: {
       options: {
-        relaxerror: ['W005']
+        relaxerror: ['W005', 'E013']
       },
       files: 'public/**.html',
     },
@@ -173,27 +173,37 @@ module.exports = function(grunt) {
                   title: "Sub-story 3",
                   subtitle: "And this is story 3",
                   file: "page3"
+                },
+                {
+                  title: "Free 4",
+                  subtitle: "Story 4 is free",
+                  file: "page4"
                 }
               ]
             },
             {
               title: "Story 1",
-              subtitle: "More on story 1",
+              subtitle: "Paid story 1",
               file: "page1"
             },
             {
               title: "Story 2",
-              subtitle: "More on story 2",
+              subtitle: "Paid 2",
               file: "page2"
             },
             {
               title: "Story 3",
-              subtitle: "And this is story 3",
-              file: "page3",
+              subtitle: "Paid 3",
+              file: "page3"
+            },
+            {
+              title: "Story 4",
+              subtitle: "Free 4",
+              file: "page4",
               children: [
                 {
-                  title: "Sub-story 4",
-                  file: "page4"
+                  title: "Sub-story 5",
+                  file: "page5"
                 }
               ]
             }

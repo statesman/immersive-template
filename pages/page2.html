@@ -2,7 +2,14 @@
   "template" : "story",
   "title": "Page 2",
   "description": "This is a starter template",
-  "thumbnail": "assets/thumbnail.jpg"
+  "thumbnail": "assets/thumbnail.jpg",
+  "videoUniqueName": {
+      "anvatoInstance": "p0",
+      "anvatoType": "video",
+      "anvatoId": "3928772",
+      "anvatoAd": "mystatesman"
+  },
+  "byline": ["John Doe"]
 }
 ---
 
@@ -10,10 +17,12 @@
   <div class="row">
     <article id="main" class="col-xs-12">
 
+      {{> video-full-anvato page.videoUniqueName}}
+
       <h6>Project overline</h6>
       <h1>Page 2</h1>
       <h2>And a related subhed that's a little chatty and almost a little summary-like ... it could even be the length of a long sentence.</h2>
-      <p class="author">By byline / Published January 1, 2000</p>
+      <p class="author">By {{ page.byline }} / Published January 1, 2000</p>
 
       {{#markdown}}
 
